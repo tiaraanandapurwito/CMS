@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for Login */
+.container {
+    max-width: 400px;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(216, 0, 0, 0.9); /* Semi-transparent red background */
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    transform: translateY(-20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Logo Styles */
+.logo {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+/* Password Input with Eye Icon */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group-text.eye-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    z-index: 10;
+}
+
+.input-group-text.eye-icon:hover {
+    color: #f1f1f1;
+}
+
+.inputpassword {
+    padding-right: 40px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #fff;
+    border: none;
+    color: #cf0000;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #f1f1f1;
+    color: #810000;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .card-body {
+        padding: 20px;
+    }
+    
+    .logo {
+        max-width: 120px;
+    }
+}
