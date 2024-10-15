@@ -19,7 +19,7 @@
     <div class="content" style="position: absolute; top: 0; left: 0;" data-aos="fade-up" data-aos-duration="3000">
         <h3>SELAMAT DATANG DI <br> GarudaLink</h3>
         <p>Penyedia akses layanan internet, kencang tanpa lelet</p>
-        <a id="btn" class="btn" href="{{ url('perusahaan') }}">Selengkapnya</a>
+        <a id="btn" class="btn" href="{{ url('profil') }}">Selengkapnya</a>
     </div>
 </section>
 <!-- Home section end -->
@@ -78,7 +78,7 @@
                 <img src="{{ asset('img/hsp.png') }}" alt="HSP">
                 <img src="{{ asset('img/mayatama-300x75.png') }}" alt="Mayatama">
             </div>
-            
+
             <div class="logos-slide">
                 <img src="{{ asset('img/logo-apjii 1.jpg') }}" width="160" height="180" alt="APJII">
                 <img src="{{ asset('img/dashnet.jpg') }}" alt="Dashnet">

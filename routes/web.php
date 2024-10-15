@@ -5,7 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 
 // ! Beranda
-Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');
+Route::get('/beranda', [BerandaController::class, 'beranda'])->name('beranda');
+Route::get('/profil', [BerandaController::class, 'profil'])->name('profil');
+Route::get('/paket', [BerandaController::class, 'paket'])->name('paket');
 
 // ! Login and Register
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

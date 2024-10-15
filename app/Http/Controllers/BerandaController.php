@@ -10,4 +10,14 @@ class BerandaController extends Controller
     {
         return view('company profile.beranda');
     }
+
+    public function Profil()
+    {
+        return view('company profile.profil');
+    }
+
+    public function Paket()
+    {
+        return view('company profile.paket');
+    }
 }

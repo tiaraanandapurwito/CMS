@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     @stack('style')
 </head>
 
@@ -25,10 +25,10 @@
             <div class="list-navbar">
                 <ul id="menu-list" class="navbar-1945">
                     <a href="{{ url('beranda') }}">
-                        <li class="aktif">BERANDA</li>
+                        <li>BERANDA</li>
                     </a>
                     <a href="{{ url('profil') }}">
-                        <li>PROFIL</li>
+                        <li class="aktif">PROFIL</li>
                     </a>
                     <a href="{{ url('paket') }}">
                         <li>PAKET</li>
@@ -91,7 +91,8 @@
             crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="{{ asset('assets/JS/map.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/JS/rating.js') }}"></script>
 
 <!--Script icon navbar-->
     <script>

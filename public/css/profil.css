@@ -1,0 +1,275 @@
+/* tentang kami start */
+* {
+    text-decoration: none   ;
+}
+
+#tentang-kami {
+    width: 100%;
+    background-color: white;
+    padding: 30px 0px;
+  }
+
+  #tentang-kami .container {
+    padding-top: 20px;
+  }
+
+  .heading {
+    text-align: center;
+    font-family: "Raleway", Sans-serif;
+    margin-bottom: 30px;
+    color: #000;
+    font-size: 40px;
+  }
+
+  .bungkus {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .bungkus img{
+    width: 50%;
+  }
+
+  #tentang-kami .col-md-5 {
+    margin:0 auto;
+  }
+  #tentang-kami .card {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .ratakanan {
+    text-align: start;
+    font-family: 'Karla', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    /* max-width: 500px;   */
+    margin: 0 45px;
+    color: #000;
+  }
+
+    @media screen and (max-width: 768px){
+      #tentang-kami .bungkus img {
+        padding:0 5rem;
+      }
+
+      .bungkus {
+        flex-wrap: wrap;
+      }
+      .bungkus img {
+        width: 100%;
+      }
+    }
+  @media (max-width: 640px) {
+    .bungkus {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #tentang-kami {
+      padding: 2rem;
+    }
+
+    #tentang-kami .bungkus img {
+      padding: 0;
+    }
+
+    #tentang-kami .card {
+      width: 90%;
+    }
+
+    .ratakanan {
+      margin: 0;
+    }
+  }
+
+  /* tentang kami end */
+
+  /* visi misi start */
+  #visi-misi {
+    background-color: #ffffff;
+  }
+
+  #visi-misi h2 {
+    font-size: 35px;
+    color: #000000;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: "Raleway", Sans-serif;
+    padding-top: 2rem;
+  }
+
+  #visi-misi .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .card-text.text-center {
+    padding-top: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #visi-misi .card:hover {
+    transform: translateY(-10px);
+  }
+
+  #visi-misi .card-body {
+    padding: 30px;
+  }
+
+  /* #visi-misi .icon-box {
+    font-size: 3rem;
+    color: #d50202;
+    margin-bottom: 20px;
+  } */
+  
+  #visi-misi .card-title {
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  #visi-misi .card-text,
+  #visi-misi .mission-list {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.6;
+  }
+
+  .mission-list {
+    padding-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #visi-misi .mission-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  #visi-misi .mission-list li:before {
+    content: "\2022";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .box-visimisi {
+    padding: 0 2rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #visi-misi .box-visimisi .card-visimisi {
+    width: 50%;
+  }
+
+  .mission-list > li {
+    color: black;
+  }
+
+  @media screen and (max-width: 768px){
+    .box-visimisi {
+      flex-wrap: wrap;
+    }
+
+    .card-visimisi {
+      width: 100%;
+    }
+
+    .box-visimisi {
+      padding: 0 2rem;
+    }
+
+    #visi-misi .card {
+      width: 100% !important;
+    }
+  }
+  /* visi misi end */
+
+  /* testimoni start */
+  .testimoni {
+    background-color: white;
+    padding: 60px;
+  }
+
+  .section-header .title {
+    font-size: 27px;
+    font-weight: 500;
+    font-family: "Raleway", Sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+  .testimoni-content {
+    width: 100%;
+    margin: 0;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .testimoni-items {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .testimoni-items img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .text-box {
+    margin-bottom: 10px;
+  }
+
+  .text-box .name {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text-box .job {
+    font-size: 14px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .testimoni-items p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .rating i {
+    color: #f39c12;
+  }
+  /* testimoni end */
