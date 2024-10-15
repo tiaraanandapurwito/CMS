@@ -1,0 +1,189 @@
+/* home section start */
+#home {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 88%;
+}
+
+#home .content{
+   padding-top: 210px;
+   margin-left: 56px;
+   position: relative;
+}
+
+#home .content h3{
+    font-size: 45px;
+    font-family: "Raleway", Sans-serif;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+}
+
+#home .content p{
+    margin-top: 10px;
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-size: 22px;
+    color: white;
+}
+
+#btn{
+    width: 150px;
+    height: 36px;
+    margin-top: 20px;
+    background: rgb(240, 18, 18);
+    border-radius: 7px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    border: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+    color: white;
+}
+
+#btn:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(13, 11, 11);
+}
+/* home section end */
+
+/* keunggulan section start */
+#keunggulan {
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and(min-width:550px){
+  #keunggulan h5.display-3{
+    font-size: 65px;
+  }
+}
+@media screen and(min-width:400px){
+  #keunggulan h5.display-3{
+    font-size: 45px;
+  }
+}
+#keunggulan h6 {
+  font-size: 19px;
+  font-weight: 70;
+  font-family: 'Karla', sans-serif;
+  color: black;
+}
+
+#keunggulan h5.display-3 {
+  font-family: "Raleway", Sans-serif;
+  font-size: 40px;
+}
+
+.keunggulan {
+  display: flex;
+}
+
+.lingkaran{
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 18, 18);
+}
+
+.lingkaran i{
+    position: relative;
+    top: 33px;
+    gap: 1rem;
+}
+
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .pt-2.keunggulan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* keunggulan section end */
+
+/* media-partner section start */
+#media-partner{
+    background-color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-family: "Raleway", Sans-serif;
+}
+
+#media-partner.display-3 {
+  margin-top: 50px;
+  font-size: 45px;
+}
+/* media-partner section end */
+
+/* logo media-partner section start */
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 10s slide infinite linear;
+  }
+
+  .logos-slide img {
+    height: 50px;
+    margin: 0 50px;
+  }
+/* logo media-partner section end */
+
+/* maps section start */
+#maps {
+  background-color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-family: "Raleway", Sans-serif;
+    color: #000;
+}
+
+#map {
+  height: 60vh;
+  width: 100%;
+  border: 2px solid #555;
+  border-radius: 8px;
+}
+
+.legend {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.legend span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.legend-green {
+  background-color: green;
+}
+/* maps section end

@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BerandaController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ! Beranda
+Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');
 
 // ! Login and Register
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

@@ -2,7 +2,7 @@
 <footer>
     <div class="footer-content">
       <div class="footer-section about">
-        <img src="assets/logo_baru-removebg-preview.png" class="footer-logo" alt="GarudaLink Logo">
+        <img src="{{ asset('img/logo.png') }}" class="footer-logo" alt="GarudaLink Logo">
         <p>GarudaLink - Penyedia akses layanan internet, kencang tanpa lelet</p>
         <div class="contact">
           <span><i class="fas fa-phone"></i> +62-853-6354-0354</span>
@@ -23,7 +23,7 @@
           <form action="#" method="post">
             <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
             <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-            <button type="submit" class="btn btn-warning" style="font-weight: 500;">Send</button>
+            <button type="submit" class="btn btn-warning" style="font-weight: 700;">Send</button>
           </form>
         </div>
       </div>

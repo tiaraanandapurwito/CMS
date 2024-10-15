@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,8 @@
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
-                            <input type="password" name="password" class="form-control inputpassword" id="password" required>
+                            <input type="password" name="password" class="form-control inputpassword" id="password"
+                                required>
                             <span class="input-group-text eye-icon" onclick="togglePasswordVisibility('password')">
                                 <i id="eye-icon-password" class="fas fa-eye"></i>
                             </span>

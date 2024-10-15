@@ -11,7 +11,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <!--Boostrap links-->
-  
+
   <!--Font link-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
     <nav>
       <div class="awal">
         <div class="logo">
-          <img src="{{ asset('img/logo_baru-removebg-preview.png') }}" alt="Logo">
+          <img src="{{ asset('img/logo.png') }}" alt="Logo">
         </div>
         <div class="list-navbar">
           <ul id="menu-list" class="navbar-1945">
@@ -47,3 +47,5 @@
       </div>
     </nav>
     <!--navbar end-->
+</body>
+</html>
