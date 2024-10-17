@@ -16,15 +16,16 @@ class AuthController extends Controller
     // Handle login process
     public function login(Request $request)
     {
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
         // Attempt to authenticate the user with the 'admin' guard if you have one
-        if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('admin.dashboard')); // Redirect to admin dashboard or intended page
+            return redirect('/admin'); // Redirect to admin dashboard or intended page
         }
 
         return back()->withErrors([
@@ -39,6 +40,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('login.index');
     }
 }

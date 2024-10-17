@@ -36,7 +36,7 @@
               </div>
               <h3 class="card-title text-center">Visi</h3>
               <p class="card-text text-center">Menjadi penyedia layanan internet terpercaya yang menghubungkan dan
-                memberdayakan masyarakat Indonesia dengan konektivitas berkualitas tinggi.</p>
+                memberdayakan masyarakat Indonesia dengan konektivitas berkualitas tinggi</p>
             </div>
           </div>
 
@@ -48,8 +48,8 @@
                 <span>• Menyediakan layanan internet cepat, stabil, dan terjangkau</span>
                 <span>• Mengembangkan infrastruktur jaringan yang handal dan luas</span>
                 <span>• Memberikan solusi konektivitas inovatif untuk berbagai kebutuhan</span>
-                <span>• Menjaga kepuasan pelanggan melalui layanan pelanggan yang responsif</span>
-                <span>• Berperan aktif dalam mempercepat transformasi digital Indonesia.</span>
+                <span>• Menjaga kepuasan pelanggan melalui layanan yang responsif</span>
+                <span>• Berperan aktif dalam mempercepat transformasi digital Indonesia</span>
               </div>
             </div>
         </div>

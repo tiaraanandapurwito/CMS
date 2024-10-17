@@ -126,12 +126,6 @@
     padding: 30px;
   }
 
-  /* #visi-misi .icon-box {
-    font-size: 3rem;
-    color: #d50202;
-    margin-bottom: 20px;
-  } */
-  
   #visi-misi .card-title {
     font-size: 1.8rem;
     color: #000000;
@@ -151,6 +145,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-family: 'Karla', sans-serif;
+    font-size: 12px;
   }
 
   #visi-misi .mission-list li {
@@ -160,7 +156,7 @@
   }
 
   #visi-misi .mission-list li:before {
-    content: "\2022";
+    /* content: "2022"; */
     color: #000000;
     font-weight: bold;
     position: absolute;
@@ -256,14 +252,15 @@
   }
 
   .text-box .job {
-    font-size: 14px;
-    color: #000000;
+    font-size: 16px;
+    font-weight: 100;
+    color: black;
     font-family: "Poppins", sans-serif;
   }
 
   .testimoni-items p {
-    font-size: 16px;
-    color: #555;
+    font-size: 18px;
+    color: black;
     line-height: 1.5;
     margin-bottom: 15px;
     font-family: "Poppins", sans-serif;
