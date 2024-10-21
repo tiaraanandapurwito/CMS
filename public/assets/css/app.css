@@ -16,7 +16,7 @@ body {
 .card {
     border: none;
     border-radius: 15px;
-    background-color: rgba(216, 0, 0, 0.9); /* Semi-transparent red background */
+    background-color:rgba(216, 0, 0, 0.9)!important; /* Semi-transparent red background */
     color: #fff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     opacity: 0;
@@ -115,7 +115,7 @@ body {
     .card-body {
         padding: 20px;
     }
-    
+
     .logo {
         max-width: 120px;
     }

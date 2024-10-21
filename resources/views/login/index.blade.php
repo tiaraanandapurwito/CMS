@@ -8,11 +8,7 @@
     @push('style')
         <style>
             /* Animation Styles */
-            .card {
-                opacity: 0;
-                transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-                transform: translateY(-30px);
-            }
+
 
             .card.show {
                 opacity: 1;
@@ -22,6 +18,10 @@
             .card.hide {
                 opacity: 0;
                 transform: translateY(30px);
+            }
+
+            .message{
+                color: red;
             }
         </style>
     @endpush
@@ -56,15 +56,17 @@
             Login
         </x-button-submit>
 
-        <x-slot:haveLogin>
+        {{-- <x-slot:haveLogin>
             Don't have an account? <a href="{{ route('register') }}" onclick="goToRegister(event)">Register</a>
-        </x-slot:haveLogin>
+        </x-slot:haveLogin> --}}
 
         @error('email')
-            <p class="mt-3 text-center text-danger">
+            <p class="message">
                 {{ $message }}
             </p>
         @enderror
+
+
     </x-form>
     @push('scripts')
         <script>
@@ -73,7 +75,7 @@
                 const card = document.querySelector('.card');
                 card.classList.add('hide');
                 setTimeout(function() {
-                    window.location.href = "{{ route('register') }}";
+                    window.location.href = ;
                 }, 700); // Match this duration to the CSS transition time
             }
 

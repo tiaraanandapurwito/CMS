@@ -1,4 +1,3 @@
-alert('oo');
 document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.querySelector('#menuButton');
     const sidebar = document.querySelector('#sidebar');
