@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DeskripsiProfilController;
 use App\Http\Controllers\MediaPartnerController;
 
 Route::get('/admin', [AdminController::class, 'dashboard'])
@@ -12,7 +13,7 @@ Route::get('/admin', [AdminController::class, 'dashboard'])
 
 
 // ! Beranda
-Route::get('/beranda', [BerandaController::class, 'beranda'])->name('company-profile.beranda');
+Route::get('/', [BerandaController::class, 'beranda'])->name('company-profile.beranda');
 Route::get('/profil', [BerandaController::class, 'profil'])->name('company-profile.profil');
 Route::get('/paket', [BerandaController::class, 'paket'])->name('company-profile.paket');
 
@@ -39,3 +40,10 @@ Route::put('/admin/mediapartner/{mediapartner}', [MediaPartnerController::class,
 Route::post('/admin/mediapartner/create', [MediaPartnerController::class, 'store'])->name('mediapartners.store');
 Route::delete('/admin/mediapartner/{mediapartner}/delete', [MediaPartnerController::class, 'destroy'])->name('mediapartners.delete');
 // ! Route MediaPartner
+
+Route::get('/admin/profilperusahaan', [DeskripsiProfilController::class, 'index'])->name('deskripsi profil.deskripsi');
+Route::get('/admin/profilperusahaan/create', [DeskripsiProfilController::class, 'create'])->name('deskripsi profil.create');
+Route::post('/admin/profilperusahaan/create', [DeskripsiProfilController::class, 'store'])->name('deskripsi profil.store');
+Route::get('/admin/profilperusahaan/{id}/edit', [DeskripsiProfilController::class, 'edit'])->name('deskripsi profil.edit');
+Route::put('admin/profilperusahaan/{id}', [DeskripsiProfilController::class, 'update'])->name('deskripsi profil.update');
+Route::post('/admin/profilperusahaan/delete', [DeskripsiProfilController::class, 'destroy'])->name('deskripsi profil.delete');

@@ -20,16 +20,24 @@
                 transform: translateY(30px);
             }
 
-            .message{
+            .message {
                 color: red;
             }
         </style>
     @endpush
 
+
+
     <x-form class="card">
         <x-slot:title>
             Login
         </x-slot:title>
+
+        @error('email')
+        <p class="message">
+            {{ $message }}
+        </p>
+    @enderror
 
         <x-slot:route>
             {{ route('login.submit') }}
@@ -60,11 +68,7 @@
             Don't have an account? <a href="{{ route('register') }}" onclick="goToRegister(event)">Register</a>
         </x-slot:haveLogin> --}}
 
-        @error('email')
-            <p class="message">
-                {{ $message }}
-            </p>
-        @enderror
+
 
 
     </x-form>

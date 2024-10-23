@@ -12,7 +12,7 @@
    position: relative;
 }
 
-#home .content h3{
+#home .content h3 {
     font-size: 45px;
     font-family: "Raleway", Sans-serif;
     font-weight: normal;
@@ -87,7 +87,7 @@
     margin: auto;
     height: 150px;
     color: rgb(255, 255, 255);
-    background-color: rgb(240, 18, 18);
+    background-color: #C62E2E;
 }
 
 .lingkaran i{
@@ -121,7 +121,7 @@
 }
 
 #media-partner.display-3 {
-  margin-top: 50px;
+  margin-top: 15px;
   font-size: 45px;
 }
 /* media-partner section end */
@@ -163,11 +163,30 @@
     color: #000;
 }
 
+.display-2 {
+    padding: 20px;
+}
+
 #map {
   height: 60vh;
-  width: 100%;
+  width: 50%;
   border: 2px solid #555;
   border-radius: 8px;
+}
+
+#map:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#map:-moz-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#map:fullscreen {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .legend {
@@ -187,3 +206,4 @@
   background-color: green;
 }
 /* maps section end
+

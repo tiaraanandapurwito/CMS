@@ -8,7 +8,8 @@
 
   /* Navbar start */
 .awal {
-  background-color: rgb(240, 18, 18);
+  background-color: #C62E2E;
+  width: 100%;
   padding: 20px 3rem;
   font-family: "Poppins", sans-serif;
   position: relative;
@@ -62,7 +63,7 @@ ul a {
 }
 
 ul li:hover{
-  color: #172554;
+  color: #F9E400;
 }
 
 .icon-navbar {
@@ -102,7 +103,7 @@ display: none;
 footer {
     width: 100vw;
     bottom: 0;
-    background: linear-gradient(to right, rgb(240, 18, 18), #7f1d1d) ;
+    background: linear-gradient(to right, #C62E2E, #B8001F) ;
     color: #fff;
     padding: 20px 0 20px;
     font-size: 19px;
@@ -227,27 +228,31 @@ footer {
 
   .contact-form .contact-input {
     background: rgb(255, 255, 255);
-    color: #d6c2c2;
+    color: #fff;
     margin-bottom: 10px;
     line-height: 1.5rem;
     padding: 0.9rem 1.4rem;
     border: none;
-    width: 100%;
+    width: 70%;
+    border-radius: 10px;
   }
 
-  .btn-warning {
-    font-weight: bold;
+  .bawah {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-submit {
+    /* background-color: blue; */
+    /* font-weight: bold; */
     font-family: "Poppins", sans-serif;
     font-size: 17px;
-    color: #000;
+    color: #fff;
     border: none;
     padding: 10px 10px;
     cursor: pointer;
     transition: all 0.3s;
-  }
-
-  .btn-warning:hover {
-    background:#fff;
+    width: 15%;
   }
 
   .footer-bottom {

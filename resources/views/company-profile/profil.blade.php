@@ -10,11 +10,7 @@
 
         <div class="ratakanan" data-aos="fade-left" data-aos-duration="1000">
           <p>
-            GarudaLink berdiri pada tahun 2023 dengan tujuan menyediakan akses internet berkualitas tinggi untuk bisnis
-            dan perorangan.
-            Sejak awal berdiri, GarudaLink telah berkomitmen untuk memberikan layanan internet yang cepat, stabil,
-            dan andal, serta terus berinovasi berfokus pada pelayanan yang prima dan dukungan teknis 24/7,
-            memastikan kepuasan dan kenyamanan pelanggan dalam setiap penggunaan layanan internet.
+            {{ $descriptions[0]->description }}
           </p>
         </div>
       </div>
@@ -23,7 +19,7 @@
   <!-- Tentang Kami end -->
 
   <!-- visi misi start -->
-  <section id="visi-misi" class="">
+  <section id="visi-misi">
     <div class="container-visimisi">
       <h2 class="text-center mb-5">Visi & Misi</h2>
 

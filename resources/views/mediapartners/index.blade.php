@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Media Partner</h1>
+        <h1 style="color: black">Media Partner</h1>
         <a href="{{ route('mediapartners.create') }}" class="btn btn-primary">Masukkan Media Partner</a>
 
         @if (session('success'))

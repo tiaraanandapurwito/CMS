@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeskripsiProfil;
 use App\Models\MediaPartner;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class BerandaController extends Controller
 
     public function Profil()
     {
-        return view('company-profile.profil');
+        $descriptions = DeskripsiProfil::all();
+        return view('company-profile.profil', compact('descriptions'));
     }
 
     public function Paket()

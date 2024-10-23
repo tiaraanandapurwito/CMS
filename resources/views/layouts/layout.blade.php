@@ -14,7 +14,7 @@
 
 <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <div class="card show" style="background-color: rgba(216, 0, 0, 0.9)">
+        <div class="card show" style="background-color: #C62E2E">
             <div class="card-body text-center">
                 <img src="{{ asset('img/logo baru.png') }}" alt="Logo" class="logo mb-4">
                 <form method="POST" action="{{ route('login') }}">

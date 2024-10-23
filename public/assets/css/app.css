@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Styles card login */
 body {
     background-color: #000;
     font-family: 'Poppins', sans-serif;
@@ -16,7 +16,7 @@ body {
 .card {
     border: none;
     border-radius: 15px;
-    background-color:rgba(216, 0, 0, 0.9)!important; /* Semi-transparent red background */
+    background-color:#C62E2E !important; /* Semi-transparent red background */
     color: #fff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     opacity: 0;

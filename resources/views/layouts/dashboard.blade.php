@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
 </head>
 
-<body class="text-white bg-dark">
+<body class="text-white bg-light">
     <div class="wrapper">
         <!-- Include Navbar Component -->
         <x-navbar-admin></x-navbar-admin>

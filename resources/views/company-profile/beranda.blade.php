@@ -101,14 +101,16 @@
     <!-- Media partner section end -->
 
     <!-- Maps start -->
-    <div class="container-fluid pt-5">
-        <div class="container text-center">
-            <h5 class="display-3" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
-            <div id="map" style="width: 100%; height: 500px;"></div>
-            <div class="legend">
-                <p><strong>Keterangan Titik:</strong></p>
-                <p><span class="legend-green"></span> <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan
-                    memberikan layanan</p>
+    <div class="container-fluid">
+        <div class="container text-center mb-4">
+            <h5 class="display-2" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
+            <div class="d-flex">
+                <div id="map" style="width: 50%; height: 250px;"></div>
+                <div class="legend">
+                    <p><strong>Keterangan Titik:</strong></p>
+                    <p><span class="legend-green"></span> <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan
+                        memberikan layanan</p>
+                </div>
             </div>
         </div>
     </div>

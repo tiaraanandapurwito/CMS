@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'GarudaLink I Profil')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -13,6 +14,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     @stack('style')
+    <style>
+        .testimoni {
+            background-color: white;
+            padding: 60px;
+            padding-top: 150px;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +32,8 @@
             </div>
             <div class="list-navbar">
                 <ul id="menu-list" class="navbar-1945">
-                    <a href="{{ url('beranda') }}">
+                    <a href="{{ url('/
+                                                            ') }}">
                         <li>BERANDA</li>
                     </a>
                     <a href="{{ url('profil') }}">
@@ -59,19 +68,20 @@
                     <span><i class="fas fa-envelope"></i> garudalinkpku@gmail.com</span>
                 </div>
                 <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/tiaraanandapurwito/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tiaraanandapurwito/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/tiaraanandapurwito/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/tiaraanandapurwito/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="footer-section links">
                 <div class="footer-section contact-form">
                     <h3>Contact Us</h3>
-                    <form action="#" method="post">
-                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                        <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn btn-warning" style="font-weight: 500;">Send</button>
+                    <form action="#" class="bawah" method="post">
+                        <input type="email" name="email" class="text-input contact-input"
+                            placeholder="Your email address...">
+                        <textarea name="message" class="text-input contact-input" placeholder="Your message..." rows="1"></textarea>
+                        <button type="submit" class="btn btn-submit" style="font-weight: 500; background-color: black">Send</button>
                     </form>
                 </div>
             </div>
@@ -84,17 +94,17 @@
 
     <!-- Leaflet and Map Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('assets/JS/rating.js') }}"></script>
 
-<!--Script icon navbar-->
+    <!--Script icon navbar-->
     <script>
         AOS.init();
         const menuIconNavbar = document.getElementById("icon-navbar");
@@ -105,4 +115,5 @@
         });
     </script>
 </body>
+
 </html>

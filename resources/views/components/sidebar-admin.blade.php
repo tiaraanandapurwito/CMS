@@ -6,7 +6,7 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <img src="{{ auth()->user()->profile_picture ? asset('img/'. auth()->user()->profile_picture) : asset('img/xaviera.jfif') }}"
+                        <img src="{{ asset('img/xaviera.jfif') }}"
                         alt="Profile" class="rounded-circle" width="30" height="30">
                         <span style="margin-left: 5px">
                             {{ auth()->user()->name }}
@@ -16,12 +16,12 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ul class="list-group list-group-flush">
-                            <li>
+                            {{-- <li>
                                 <a class="list-group-item {{ request()->routeIs('profile') ? 'active' : '' }}"
                                     href="">
                                     <i class="fa-solid fa-user"></i> {{ auth()->user()->name }}
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="logout">
                                 <a class="list-group-item logout">
                                     <form action="{{ route('logout') }}" method="POST">
@@ -52,7 +52,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="">
+            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href=" {{ route ('deskripsi profil.deskripsi') }}">
                 <i class="fas fa-city me-2"></i> Profil Perusahaan
             </a>
         </li>
