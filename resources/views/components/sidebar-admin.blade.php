@@ -58,7 +58,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('paket') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ request()->routeIs('paket.index') ? 'active' : '' }}"
+                href="{{ route('paket.index') }}">
                 <i class="fas fa-wifi me-2"></i> Paket
             </a>
         </li>

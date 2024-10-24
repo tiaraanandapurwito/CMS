@@ -62,7 +62,7 @@ class DeskripsiProfilController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->back()->with('success', 'Deskripsi berhasil ditambahkan');
+        return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi berhasil ditambahkan');
     }
 
     public function tentangkami ()

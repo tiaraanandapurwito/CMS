@@ -6,6 +6,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeskripsiProfilController;
 use App\Http\Controllers\MediaPartnerController;
+use App\Http\Controllers\PaketController;
 
 Route::get('/admin', [AdminController::class, 'dashboard'])
     ->middleware('auth')
@@ -41,9 +42,16 @@ Route::post('/admin/mediapartner/create', [MediaPartnerController::class, 'store
 Route::delete('/admin/mediapartner/{mediapartner}/delete', [MediaPartnerController::class, 'destroy'])->name('mediapartners.delete');
 // ! Route MediaPartner
 
+// ! Route DeskripsiProfil Perusahaan
 Route::get('/admin/profilperusahaan', [DeskripsiProfilController::class, 'index'])->name('deskripsi profil.deskripsi');
 Route::get('/admin/profilperusahaan/create', [DeskripsiProfilController::class, 'create'])->name('deskripsi profil.create');
 Route::post('/admin/profilperusahaan/create', [DeskripsiProfilController::class, 'store'])->name('deskripsi profil.store');
 Route::get('/admin/profilperusahaan/{id}/edit', [DeskripsiProfilController::class, 'edit'])->name('deskripsi profil.edit');
 Route::put('admin/profilperusahaan/{id}', [DeskripsiProfilController::class, 'update'])->name('deskripsi profil.update');
 Route::post('/admin/profilperusahaan/delete', [DeskripsiProfilController::class, 'destroy'])->name('deskripsi profil.delete');
+// ! Route DeskripsiProfil Perusahaan
+
+// ! Route Paket
+Route::get('admin/paket', [PaketController::class, 'index'])->name('paket.index');
+Route::get('/admin/paket/create', [PaketController::class, 'create'])->name('paket.create');
+Route::post('/admin/paket/create', [DeskripsiProfilController::class, 'store'])->name('paket.store');
