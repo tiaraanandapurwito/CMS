@@ -1,4 +1,4 @@
-/* tentang kami start */
+tentang kami start */
 * {
     text-decoration: none   ;
 }
@@ -48,7 +48,6 @@
   .ratakanan {
     text-align: start;
     font-family: 'Karla', sans-serif;
-    font-size: 17px;
     line-height: 1.6;
     /* max-width: 500px;   */
     margin: 0 45px;
@@ -230,7 +229,7 @@
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 50px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
 
@@ -260,7 +259,7 @@
   }
 
   .testimoni-items p {
-    font-size: 12px;
+    /* font-size: 30px; */
     color: black;
     line-height: 1.5;
     margin-bottom: 15px;

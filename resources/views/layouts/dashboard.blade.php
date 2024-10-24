@@ -38,7 +38,7 @@
                 title: 'Success',
                 text: '{{ session('success') }}',
                 icon: 'success',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'OK'
             })
         </script>
     @endif

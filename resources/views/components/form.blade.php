@@ -2,7 +2,7 @@
     <h3 class="mb-4 text-center">{{ $title }}</h3>
     <form method="POST" action="{{ $route }}">
         @csrf
-
+       
         {{ $slot }}
 
 

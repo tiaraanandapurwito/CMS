@@ -39,7 +39,7 @@ class MediaPartnerController extends Controller
 
         MediaPartner::create($data);
 
-        return redirect()->route('mediapartners.index')->with('success', 'Media Partner created successfully.');
+        return redirect()->route('mediapartners.index')->with('success', 'Media Partner berhasil ditambahkan.');
     }
 
     /**
@@ -73,7 +73,7 @@ class MediaPartnerController extends Controller
 
         $mediapartner->update($data);
 
-        return redirect()->route('mediapartners.index')->with('success', 'Media Partner updated successfully.');
+        return redirect()->route('mediapartners.index')->with('success', 'Media Partner berhasil diupdate');
     }
 
     /**
@@ -83,6 +83,6 @@ class MediaPartnerController extends Controller
     {
         $mediapartner->delete();
 
-        return redirect()->route('mediapartners.index')->with('success', 'Media Partner deleted successfully.');
+        return redirect()->route('mediapartners.index')->with('success', 'Media Partner berhasil dihapus');
     }
 }

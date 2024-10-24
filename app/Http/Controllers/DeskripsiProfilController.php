@@ -38,7 +38,7 @@ class DeskripsiProfilController extends Controller
             'description' => $validatedata['description'],
         ]);
 
-        return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi Profil Perusahaan updated successfully.');
+        return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi berhasil diupdate');
     }
 
 
@@ -47,7 +47,7 @@ class DeskripsiProfilController extends Controller
         $descriptions= DeskripsiProfil::where('id', $request->id);
         $descriptions->delete();
 
-        return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi Profil Perusahaan deleted successfully.');
+        return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi berhasil dihapus');
     }
 
 
@@ -62,7 +62,7 @@ class DeskripsiProfilController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->back()->with('success', 'Deskripsi berhasil ditambahkan.');
+        return redirect()->back()->with('success', 'Deskripsi berhasil ditambahkan');
     }
 
     public function tentangkami ()

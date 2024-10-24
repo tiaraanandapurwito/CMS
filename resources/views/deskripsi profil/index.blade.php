@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Profil Perusahaan</h1>
+        <h1 style="color: black">Profil Perusahaan</h1>
         <a href="{{ route('deskripsi profil.create') }}" class="btn btn-primary">Masukkan Deskripsi</a>
 
         @if (session('success'))

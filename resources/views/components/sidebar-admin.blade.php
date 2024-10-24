@@ -6,8 +6,8 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <img src="{{ asset('img/xaviera.jfif') }}"
-                        alt="Profile" class="rounded-circle" width="30" height="30">
+                        <img src="{{ asset('img/xaviera.jfif') }}" alt="Profile" class="rounded-circle" width="30"
+                            height="30">
                         <span style="margin-left: 5px">
                             {{ auth()->user()->name }}
                         </span>
@@ -16,12 +16,6 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ul class="list-group list-group-flush">
-                            {{-- <li>
-                                <a class="list-group-item {{ request()->routeIs('profile') ? 'active' : '' }}"
-                                    href="">
-                                    <i class="fa-solid fa-user"></i> {{ auth()->user()->name }}
-                                </a>
-                            </li> --}}
                             <li class="logout">
                                 <a class="list-group-item logout">
                                     <form action="{{ route('logout') }}" method="POST">
@@ -39,30 +33,32 @@
             </div>
         </div>
     </div>
+
     <ul class="px-3 nav flex-column">
         <li class="nav-item">
-            <a class="nav-link position-relative {{ request()->routeIs('') ? 'active' : '' }}"
-                href=" {{ route ('mediapartners.index') }}">
+            <a class="nav-link position-relative {{ request()->routeIs('mediapartners.index') ? 'active' : '' }}"
+                href="{{ route('mediapartners.index') }}">
                 <i class="fas fa-handshake me-2"></i> Media Partner
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="">
-                <i class="fas fa-map-location me-2"></i>  Maps GarudaLink
+            <a class="nav-link {{ request()->routeIs('maps') ? 'active' : '' }}" href="#">
+                <i class="fas fa-map-location me-2"></i> Maps GarudaLink
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href=" {{ route ('deskripsi profil.deskripsi') }}">
+            <a class="nav-link {{ request()->routeIs('deskripsi profil.deskripsi') ? 'active' : '' }}"
+                href="{{ route('deskripsi profil.deskripsi') }}">
                 <i class="fas fa-city me-2"></i> Profil Perusahaan
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="">
+            <a class="nav-link {{ request()->routeIs('testimoni') ? 'active' : '' }}" href="#">
                 <i class="fas fa-users me-2"></i> Testimoni
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="">
+            <a class="nav-link {{ request()->routeIs('paket') ? 'active' : '' }}" href="#">
                 <i class="fas fa-wifi me-2"></i> Paket
             </a>
         </li>

@@ -9,7 +9,7 @@
         <img src="{{ asset ('img/perusahaan.jpg') }}" alt="Tentang Kami">
 
         <div class="ratakanan" data-aos="fade-left" data-aos-duration="1000">
-          <p>
+          <p style="font-size: 18px">
             {{ $descriptions[0]->description }}
           </p>
         </div>
@@ -23,7 +23,7 @@
     <div class="container-visimisi">
       <h2 class="text-center mb-5">Visi & Misi</h2>
 
-      <div class="   w-100  box-visimisi" data-aos="zoom-in">
+      <div class="w-100  box-visimisi" data-aos="zoom-in">
         <!-- Visi -->
           <div class="card h-100 card-visimisi">
             <div class="card-body d-flex flex-column">
@@ -71,7 +71,7 @@
                 <span class="job">IT Manager The Premiere Hotel</span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               Mereka menawarkan layanan yang solid, kecepatan yang mengesankan,
               dan dukungan pelanggan yang sangat baik. Jika Anda mencari ISP yang handal, GarudaLink adalah pilihan yang tepat!
             </p>
@@ -92,7 +92,7 @@
                 <span class="job">Owner Winter Cafe</span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               Tim teknis sigap dalam merespons keluhan dan menyelesaikan masalah teknis.
               Pengguna bisnis sering kali merasa puas dengan dukungan 24/7 yang diberikan.
             </p>
@@ -113,7 +113,7 @@
                 <span class="job">IT Support Rumah Sakit Insan Cendekia</span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               Saya merasa layanan internet yang disediakan GarudaLink cukup stabil,
               terutama untuk aktivitas sehari-hari seperti browsing, meeting online & streaming.
             </p>
@@ -134,7 +134,7 @@
                 <span class="job">CEO SpaceX</span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               Harga paket yang ditawarkan sepadan dengan layanan yang diberikan,
               terdapat juga opsi paket dengan kecepatan berbeda
               sehingga memudahkan pengguna untuk memilih sesuai kebutuhan mereka
@@ -156,7 +156,7 @@
                 <span class="job">Owner Klinik AvosCare </span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               Dengan GarudaLink, semua data pasien klinik AvosCare dapat diakses dengan cepat,
               dan proses registrasi hingga penjadwalan kunjungan berjalan lancar tanpa kendala.
             </p>
@@ -177,7 +177,7 @@
                 <span class="job">CEO Skybox</span>
               </div>
             </div>
-            <p>
+            <p style="font-size: 19px">
               GarudaLink menawarkan koneksi internet yang aman,
               memungkinkan kami untuk melindungi data sensitif
               dan menjalankan operasi tanpa khawatir akan ancaman keamanan jaringan.

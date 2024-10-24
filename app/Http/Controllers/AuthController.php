@@ -24,7 +24,7 @@ class AuthController extends Controller
         // Attempt to authenticate the user with the 'admin' guard if you have one
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/admin')->with('success', 'Welcome Admin GarudaLink'); // Redirect to admin dashboard or intended page
+            return redirect('/admin')->with('success', 'Login Berhasil'); // Redirect to admin dashboard or intended page
         }
         // dd($request->all());
 
