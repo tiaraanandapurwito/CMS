@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DeskripsiProfil;
 use App\Models\MediaPartner;
+use App\Models\Paket;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -22,6 +23,7 @@ class BerandaController extends Controller
 
     public function Paket()
     {
-        return view('company-profile.paket');
+        $pakets=Paket::all();
+        return view('company-profile.paket', compact('pakets'));
     }
 }

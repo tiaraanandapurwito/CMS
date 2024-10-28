@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Logo MediaPartner</th>
                     <th>Actions</th>
                 </tr>
             </thead>

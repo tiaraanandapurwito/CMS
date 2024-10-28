@@ -9,8 +9,28 @@
       <h2 class="mb-5" id="jenis">Pilih paket yang sesuai dengan kebutuhan internet dan wifi Anda</h2>
 
       <div class="row justify-content-center">
+        @foreach ($pakets as $paket)
+            {{-- {{ $paket }} --}}
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card shadow-lg border-0 h-100 text-center paket-card">
+                <div class="card-header text-white" style="background-color: {{ $paket->warna_paket }}">
+                    <h4 class="card-title">{{ $paket->nama_paket }}</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-price">Rp {{ $paket->harga }} <span>/bulan</span></h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        @foreach (explode('!', $paket->deskripsi) as $desc)
+                            <li class="list-group-item">{{ $desc }}</li>
+                        @endforeach
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-auto w-100">Pilih Paket</a>
+                </div>
+                </div>
+            </div>
+        @endforeach
         <!-- Paket 1 -->
-        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+        {{-- {{ $pakets }} --}}
+        {{-- <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
           <div class="card shadow-lg border-0 h-100 text-center paket-card">
             <div class="card-header bg-primary text-white">
               <h4 class="card-title">Garuda <br> Basic</h4>
@@ -84,7 +104,7 @@
               <a href="#" class="btn btn-danger mt-auto w-100">Pilih Paket</a>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>

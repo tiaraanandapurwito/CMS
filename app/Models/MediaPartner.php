@@ -11,6 +11,6 @@ class MediaPartner extends Model
     protected $table = 'mediapartners';
     protected $fillable = [
         'mediapartner',
-        'image'
+        'image',
     ];
 }

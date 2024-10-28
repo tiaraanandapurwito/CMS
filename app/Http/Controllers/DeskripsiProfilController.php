@@ -44,7 +44,7 @@ class DeskripsiProfilController extends Controller
 
     public function destroy(Request $request)
     {
-        $descriptions= DeskripsiProfil::where('id', $request->id);
+        $descriptions = DeskripsiProfil::where('id', $request->id);
         $descriptions->delete();
 
         return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi berhasil dihapus');
@@ -65,7 +65,7 @@ class DeskripsiProfilController extends Controller
         return redirect()->route('deskripsi profil.deskripsi')->with('success', 'Deskripsi berhasil ditambahkan');
     }
 
-    public function tentangkami ()
+    public function tentangkami()
     {
         $descriptions = DeskripsiProfil::all();
         return view('company-profile.profil', compact('descriptions'));

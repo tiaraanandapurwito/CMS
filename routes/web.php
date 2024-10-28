@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeskripsiProfilController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\TestimoniController;
 
 Route::get('/admin', [AdminController::class, 'dashboard'])
     ->middleware('auth')
@@ -54,4 +55,14 @@ Route::post('/admin/profilperusahaan/delete', [DeskripsiProfilController::class,
 // ! Route Paket
 Route::get('admin/paket', [PaketController::class, 'index'])->name('paket.index');
 Route::get('/admin/paket/create', [PaketController::class, 'create'])->name('paket.create');
-Route::post('/admin/paket/create', [DeskripsiProfilController::class, 'store'])->name('paket.store');
+Route::post('/admin/paket/create', [PaketController::class, 'store'])->name('paket.store');
+Route::get('/admin/paket/{id}/edit', [PaketController::class, 'edit'])->name('paket.edit');
+Route::put('admin/paket/{id}', [PaketController::class, 'update'])->name('paket.update');
+Route::delete('/admin/paket/{id}/delete', [PaketController::class, 'destroy'])->name('paket.delete');
+// !Route Paket
+
+// !Route Testimoni
+Route::get('admin/testimoni', [TestimoniController::class, 'index'])->name('testimoni.index');
+Route::get('/admin/testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
+Route::post('/admin/testimoni/create', [TestimoniController::class, 'store'])->name('testimoni.store');
+// !Route Testimoni

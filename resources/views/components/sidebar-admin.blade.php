@@ -53,7 +53,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('testimoni') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ request()->routeIs('testimoni.index') ? 'active' : '' }}"
+                href="{{ route('testimoni.index') }}">
                 <i class="fas fa-users me-2"></i> Testimoni
             </a>
         </li>
@@ -61,6 +62,12 @@
             <a class="nav-link {{ request()->routeIs('paket.index') ? 'active' : '' }}"
                 href="{{ route('paket.index') }}">
                 <i class="fas fa-wifi me-2"></i> Paket
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('superadmin') ? 'active' : '' }}"
+                href="{{ route('paket.index') }}">
+                <i class="fa-solid fa-user-tie me-2"></i> Superadmin
             </a>
         </li>
     </ul>
