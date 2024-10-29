@@ -1,36 +1,39 @@
 @extends('layouts.app3')
 
 @section('content')
-<!-- Tentang Kami start -->
-<!-- paket start -->
-<section id="paket-section" class="py-5">
-    <div class="container text-center">
-      <h5 class="display-5 mb-3" id="layanan">Paket Layanan Internet & WiFi</h5>
-      <h2 class="mb-5" id="jenis">Pilih paket yang sesuai dengan kebutuhan internet dan wifi Anda</h2>
+    <!-- Tentang Kami start -->
+    <!-- paket start -->
+    <section id="paket-section" class="py-5">
+        <div class="container text-center">
+            <h5 class="display-5 mb-3" id="layanan">Paket Layanan Internet & WiFi</h5>
+            <h2 class="mb-5" id="jenis">Pilih paket yang sesuai dengan kebutuhan internet dan wifi Anda</h2>
 
-      <div class="row justify-content-center">
-        @foreach ($pakets as $paket)
-            {{-- {{ $paket }} --}}
-            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card shadow-lg border-0 h-100 text-center paket-card">
-                <div class="card-header text-white" style="background-color: {{ $paket->warna_paket }}">
-                    <h4 class="card-title">{{ $paket->nama_paket }}</h4>
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-price">Rp {{ $paket->harga }} <span>/bulan</span></h5>
-                    <ul class="list-group list-group-flush mb-4">
-                        @foreach (explode('!', $paket->deskripsi) as $desc)
-                            <li class="list-group-item">{{ $desc }}</li>
-                        @endforeach
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-auto w-100">Pilih Paket</a>
-                </div>
-                </div>
-            </div>
-        @endforeach
-        <!-- Paket 1 -->
-        {{-- {{ $pakets }} --}}
-        {{-- <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="row justify-content-center">
+                @foreach ($pakets as $paket)
+                    {{-- {{ $paket }} --}}
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="card shadow-lg border-0 h-100 text-center paket-card">
+                            <div class="card-header text-white" style="background-color: {{ $paket->warna_paket }}">
+                                <h4 class="card-title">{{ $paket->nama_paket }}</h4>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-price">Rp {{ $paket->harga }} <span>/bulan</span></h5>
+                                <ol class="list-group list-group-flush mb-4">
+                                    @foreach (explode('.', $paket->deskripsi) as $desc)
+                                        <li class="list-group-item">{{ $desc }}</li>
+                                    @endforeach
+                                </ol>
+                                <ol>
+                                    <li>t</li>
+                                </ol>
+                                <a href="#" class="btn btn-primary mt-auto w-100">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                <!-- Paket 1 -->
+                {{-- {{ $pakets }} --}}
+                {{-- <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
           <div class="card shadow-lg border-0 h-100 text-center paket-card">
             <div class="card-header bg-primary text-white">
               <h4 class="card-title">Garuda <br> Basic</h4>
@@ -105,12 +108,12 @@
             </div>
           </div>
         </div> --}}
-      </div>
-    </div>
-  </section>
-  <!-- paket end -->
-  @endsection
+            </div>
+        </div>
+    </section>
+    <!-- paket end -->
+@endsection
 
 @push('style')
-<link href="{{ asset('css/paket.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/paket.css') }}" rel="stylesheet">
 @endpush

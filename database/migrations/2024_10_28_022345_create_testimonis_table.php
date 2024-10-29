@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('testimonis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table-> string('image');
+            $table->string('image');
             $table->string('pekerjaan');
             $table->text('pesan');
-            $table->float('rating')->default(5); // Misalnya, rating dari 1 hingga 5
+            $table->integer('rating'); // Misalnya, rating dari 1 hingga 5
             $table->timestamps();
         });
     }
