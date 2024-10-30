@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DeskripsiProfil;
+use App\Models\Location;
 use App\Models\MediaPartner;
 use App\Models\Paket;
 use App\Models\Testimoni;
@@ -12,8 +13,9 @@ class BerandaController extends Controller
 {
     public function Beranda()
     {
-        $mediapartners=MediaPartner::all();
-        return view('company-profile.beranda',compact('mediapartners'));
+        $mediapartners=MediaPartner::where('is_active', true)->get();
+        $locations = Location::all();
+        return view('company-profile.beranda',compact('mediapartners', 'locations'));
     }
 
     public function Profil()

@@ -14,6 +14,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Logo MediaPartner</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -28,6 +29,15 @@
                             @else
                                 No Image
                             @endif
+                        </td>
+                        <td>
+                            <form action="{{ route('mediapartners.toggle-status', $mediapartner->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-sm {{ $mediapartner->is_active ? 'btn-success' : 'btn-secondary' }}">
+                                    {{ $mediapartner->is_active ? 'Active' : 'Inactive' }}
+                                </button>
+                            </form>
                         </td>
                         <td>
                             <a href="{{ route('mediapartners.edit', $mediapartner->id) }}" class="btn btn-warning">Edit</a>

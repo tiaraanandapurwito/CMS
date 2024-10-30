@@ -10,7 +10,7 @@
 
                 <div class="ratakanan" data-aos="fade-left" data-aos-duration="1000">
                     <p style="font-size: 18px">
-                        {{ $descriptions[0]->description }}
+                        {!! $descriptions[0]->description !!}
                     </p>
                 </div>
             </div>

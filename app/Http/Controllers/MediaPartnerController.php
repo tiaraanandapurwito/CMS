@@ -14,6 +14,14 @@ class MediaPartnerController extends Controller
         return view('mediapartners.index', compact('mediapartners'));
     }
 
+    public function toggleStatus(MediaPartner $mediapartner)
+{
+    $mediapartner->is_active = !$mediapartner->is_active;
+    $mediapartner->save();
+
+    return back()->with('success', 'Good Job!');
+}
+
     /**
      * Show the form for creating a new media partner.
      */

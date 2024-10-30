@@ -157,10 +157,11 @@
 
 /* maps section start */
 #maps {
-  background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     font-size: 35px;
     font-family: "Raleway", Sans-serif;
     color: #000;
+    margin-bottom: 20px; /* Add margin for spacing */
 }
 
 .display-2 {
@@ -168,10 +169,11 @@
 }
 
 #map {
-  height: 60vh;
-  width: 50%;
-  border: 2px solid #555;
-  border-radius: 8px;
+    height: 500px; /* Set a specific height for the map */
+    width: 100%; /* Make the map responsive */
+    border: 2px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
 }
 
 #map:-webkit-full-screen {
@@ -190,20 +192,20 @@
 }
 
 .legend {
-  margin-top: 20px;
-  font-size: 17px;
+    margin-top: 20px;
+    font-size: 17px;
+    padding-left: 20px; /* Add padding for better alignment */
 }
 
 .legend span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  border-radius: 50%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
 }
 
 .legend-green {
-  background-color: green;
+    background-color: rgb(7, 88, 174);
 }
 /* maps section end
-

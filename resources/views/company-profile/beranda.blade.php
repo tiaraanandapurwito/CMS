@@ -104,12 +104,14 @@
     <div class="container-fluid">
         <div class="container text-center mb-4">
             <h5 class="display-2" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
-            <div class="d-flex">
-                <div id="map" style="width: 50%; height: 250px;"></div>
+            <div class="d-flex justify-content-center"> <!-- Center the flex items -->
+                <div id="map"></div>
                 <div class="legend">
                     <p><strong>Keterangan Titik:</strong></p>
-                    <p><span class="legend-green"></span> <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan
-                        memberikan layanan</p>
+                    <p>
+                        <span class="legend-green"></span>
+                        <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan memberikan layanan
+                    </p>
                 </div>
             </div>
         </div>
@@ -118,5 +120,29 @@
 @endsection
 
 @push('style')
-    <link href="{{ asset('css/beranda.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/beranda.css') }}?v=1.0" rel="stylesheet">
+@endpush
+
+@push('script')
+    <script>
+        // Inisialisasi peta
+        var map = L.map('map').setView([0.4637, 101.3903], 15); // Centered around UNRI with a zoom level of 15
+
+        // Menambahkan tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Data titik lokasi dari server
+        var locations = @json($locations); // Mengonversi data PHP ke JavaScript
+        console.log(locations)
+
+        // Menambahkan marker untuk setiap titik lokasi
+        locations.forEach(function(location) {
+            L.marker([location.latitude, location.longitude])
+                .addTo(map)
+                .bindPopup(location.name); // Menampilkan nama lokasi saat marker diklik
+        });
+    </script>
 @endpush

@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('maps') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ request()->routeIs('maps.index') ? 'active' : '' }}" href="{{ route('maps.index') }}">
                 <i class="fas fa-map-location me-2"></i> Maps GarudaLink
             </a>
         </li>

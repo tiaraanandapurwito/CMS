@@ -17,6 +17,10 @@ return new class extends Migration
             $table-> string('image');
             $table->timestamps();
         });
+
+        Schema::table('mediapartners', function (Blueprint $table) {
+            $table->boolean('is_active')->default(true);
+        });
     }
 
     /**
@@ -25,5 +29,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('mediapartners');
+        
+        Schema::table('mediapartners', function (Blueprint $table) {
+            $table->dropColumn('is_active');
+        });
     }
 };

@@ -21,7 +21,7 @@
                 @foreach ($descriptions as $deskripsi)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $deskripsi->description }}</td>
+                        <td>{!! $deskripsi->description !!}</td>
 
                         <td>
                             <a href="{{ route('deskripsi profil.edit', $deskripsi->id) }}" class="btn btn-warning">Edit</a>
