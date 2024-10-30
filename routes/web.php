@@ -67,5 +67,5 @@ Route::get('/admin/testimoni/create', [TestimoniController::class, 'create'])->n
 Route::post('/admin/testimoni/create/dd', [TestimoniController::class, 'store'])->name('testimoni.store');
 Route::get('/admin/testimoni/{id}/edit', [TestimoniController::class, 'edit'])->name('testimoni.edit');
 Route::put('admin/testimoni/{id}', [TestimoniController::class, 'update'])->name('testimoni.update');
-Route::delete('/admin/testimoni/{id}/delete', [PaketController::class, 'destroy'])->name('testimoni.delete');
+Route::delete('/admin/testimoni/{id}/delete', [TestimoniController::class, 'destroy'])->name('testimoni.delete');
 // !Route Testimoni

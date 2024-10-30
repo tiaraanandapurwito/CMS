@@ -19,6 +19,13 @@ class TestimoniController extends Controller
         return view('testimoni.create');
     }
 
+    public function edit($id)
+{
+    $testimoni = Testimoni::findOrFail($id);
+    return view('testimoni.edit', compact('testimoni'));
+}
+
+
     public function store(Request $request)
     {
         $request->validate([

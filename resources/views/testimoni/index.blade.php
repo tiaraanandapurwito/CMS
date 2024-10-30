@@ -22,21 +22,21 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($testimonis as $testimoni)
+                @foreach ($testimonis as $index => $testimoni)
                     <tr>
+                        <td>{{ $index + 1 }}</td> <!-- Menampilkan urutan berdasarkan indeks -->
                         <td>{{ $testimoni->nama }}</td>
+                        <td>
+                            @if ($testimoni->image)
+                                <img src="{{ asset('storage/' . $testimoni->image) }}" width="50" alt="Foto">
+                            @endif
+                        </td>
                         <td>{{ $testimoni->pekerjaan }}</td>
                         <td>{{ $testimoni->pesan }}</td>
                         <td>{{ $testimoni->rating }}</td>
                         <td>
-                            @if ($testimoni->image)
-                                <img src="{{ asset('storage/' . $testimoni->photo) }}" width="50" alt="Foto">
-                            @endif
-                        </td>
-                        <td>
                             <a href="{{ route('testimoni.edit', $testimoni->id) }}" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('testimoni.delete', $testimoni->id) }}" method="POST"
-                                style="display:inline;">
+                            <form action="{{ route('testimoni.delete', $testimoni->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Hapus</button>
@@ -45,6 +45,7 @@
                     </tr>
                 @endforeach
             </tbody>
+
+        </table>
     </div>
-    </form>
 @endsection

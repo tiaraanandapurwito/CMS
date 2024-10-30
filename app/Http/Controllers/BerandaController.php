@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DeskripsiProfil;
 use App\Models\MediaPartner;
 use App\Models\Paket;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -18,7 +19,8 @@ class BerandaController extends Controller
     public function Profil()
     {
         $descriptions = DeskripsiProfil::all();
-        return view('company-profile.profil', compact('descriptions'));
+        $testimonis = Testimoni::all();
+        return view('company-profile.profil', compact('descriptions','testimonis'));
     }
 
     public function Paket()
