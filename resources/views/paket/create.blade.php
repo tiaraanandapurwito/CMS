@@ -38,7 +38,7 @@
                 <label for="deskripsi_paket" style="color: black; font-size: 20px">Deskripsi Paket</label>
                 <textarea class="form-control" style="border-style: solid; border-width: 1px; border-color:black" id="deskripsi_paket"
                     name="deskripsi_paket" rows="4" required></textarea>
-                <small class="text-muted mt-2">Nb: Jika ingin memberi baris baru kasih tanda titik diujung kata atau
+                <small class="text-muted mt-2">Nb: Jika ingin memberi baris baru harap dikasih tanda titik diujung kata atau
                     kalimat</small>
             </div>
 

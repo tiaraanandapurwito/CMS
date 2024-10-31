@@ -112,37 +112,105 @@
                         <span class="legend-green"></span>
                         <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan memberikan layanan
                     </p>
+                    <p>
+                        <span class="legend-blue"></span>
+                        <strong>Perencanaan</strong> - Tiang yang sedang dalam perencanaan pemasangan
+                    </p>
+                    <p>
+                        <span class="legend-red"></span>
+                        <strong>Tidak Bisa Dipasang</strong> - Tiang yang tidak dapat dipasang
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Maps end -->
 @endsection
 
 @push('style')
     <link href="{{ asset('css/beranda.css') }}?v=1.0" rel="stylesheet">
+    <style>
+        .legend {
+            margin-top: 20px;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+
+        .legend span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border-radius: 50%;
+        }
+
+        .legend-green {
+            background-color: green;
+        }
+
+        .legend-blue {
+            background-color: blue;
+        }
+
+        .legend-red {
+            background-color: red;
+        }
+    </style>
 @endpush
 
 @push('script')
     <script>
-        // Inisialisasi peta
-        var map = L.map('map').setView([0.4637, 101.3903], 15); // Centered around UNRI with a zoom level of 15
+        // Initialize map
+        var map = L.map('map').setView([0.4783470, 	101.3799990], 15);
 
-        // Menambahkan tile layer
+        // Add tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
         // Data titik lokasi dari server
-        var locations = @json($locations); // Mengonversi data PHP ke JavaScript
-        console.log(locations)
+        var locations = @json($locations); // Convert PHP data to JavaScript
 
-        // Menambahkan marker untuk setiap titik lokasi
+        // Function to determine marker color based on status
+        function getMarkerColor(status) {
+            switch (status) {
+                case 'active':
+                    return 'green';
+                case 'inactive':
+                    return 'blue';
+                case 'maintenance':
+                    return 'red';
+                default:
+                    return 'gray'; // Default color
+            }
+        }
+
+        // Add marker for each location
         locations.forEach(function(location) {
-            L.marker([location.latitude, location.longitude])
+            var color = getMarkerColor(location.status);
+
+            // Create a custom icon with color
+            var marker = L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="background-color:' + color +
+                    '; width: 20px; height: 20px; border-radius: 50%;"></div>',
+                iconSize: [20, 20]
+            });
+
+            L.marker([location.latitude, location.longitude], {
+                    icon: marker
+                })
                 .addTo(map)
-                .bindPopup(location.name); // Menampilkan nama lokasi saat marker diklik
+                .bindPopup(location.name); // Show location name on marker click
         });
     </script>
+
+    <style>
+        .custom-marker {
+            border: 2px solid #ffffff;
+            /* Optional: add border to markers */
+        }
+    </style>
 @endpush

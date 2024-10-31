@@ -4,10 +4,10 @@
     <div class="container">
         <h1 style="color: black">Testimoni</h1>
         <a href="/admin/testimoni/create" class="btn btn-primary">Masukkan Testimoni</a>
-
-        @if (session('success'))
+        
+{{-- @if (session('success'))
             <div class="alert alert-success mt-3">{{ session('success') }}</div>
-        @endif
+        @endif --}}
 
         <table class="table mt-3">
             <thead>

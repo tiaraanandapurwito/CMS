@@ -23,18 +23,23 @@ class LocationController extends Controller
     // Menyimpan data lokasi baru ke database
     public function store(Request $request)
     {
-        // Validasi input
-        $request->validate([
+        // Log the request data
+        // \Log::info($request->all());
+
+        // Validate the incoming request
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
+            'status' => 'required|in:active,inactive,maintenance',
+            'color' => 'required|in:red,green,blue',
         ]);
 
-        // Membuat lokasi baru
-        Location::create($request->all());
+        // Create a new location
+        Location::create($validatedData);
 
-        // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('maps.index')->with('success', 'Lokasi berhasil ditambahkan');
+        // Redirect to the index page with a success message
+        return redirect()->route('maps.index')->with('success', 'Titik lokasi berhasil ditambahkan!');
     }
 
     // Menampilkan halaman form untuk mengedit lokasi
@@ -47,33 +52,31 @@ class LocationController extends Controller
     // Mengupdate data lokasi yang sudah ada
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
+            'status' => 'required|in:active,inactive,maintenance',
+            'color' => 'required|in:red,green,blue',
         ]);
 
         $location = Location::findOrFail($id);
         $location->name = $request->input('name');
         $location->latitude = $request->input('latitude');
         $location->longitude = $request->input('longitude');
+        $location->status = $request->input('status'); // This will store 'active', 'inactive', or 'maintenance'
+        $location->color = $request->input('color');
         $location->save();
 
-        return redirect()->route('maps.index')->with('success', 'Lokasi berhasil diupdate');
+        return redirect()->route('maps.index')->with('success', 'Titik lokasi berhasil diupdate');
     }
-
 
     // Menghapus lokasi dari database
     public function destroy(int $id)
     {
-        $loc = Location::find($id);
-        if(!$loc) return abort(404);
-        // Menghapus lokasi
-        $loc->delete();
+        $location = Location::findOrFail($id);
+        $location->delete();
 
-        // Mengalihkan kembali dengan pesan sukses
-        return redirect()->route('maps.index')->with('success', 'Lokasi berhasil dihapus.');
+        return redirect()->route('maps.index')->with('success', 'Titik lokasi berhasil dihapus');
     }
-
 }
-

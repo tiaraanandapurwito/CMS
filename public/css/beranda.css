@@ -191,21 +191,4 @@
     height: 100% !important;
 }
 
-.legend {
-    margin-top: 20px;
-    font-size: 17px;
-    padding-left: 20px; /* Add padding for better alignment */
-}
-
-.legend span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-    border-radius: 50%;
-}
-
-.legend-green {
-    background-color: rgb(7, 88, 174);
-}
 /* maps section end

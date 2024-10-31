@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name'); // Nama lokasi
             $table->decimal('latitude', 10, 7); // Latitude
             $table->decimal('longitude', 10, 7); // Longitude
+            $table->string('status')->default('aktif'); // Status lokasi dengan default 'aktif'
+            $table->string('color')->default('green'); // Warna lokasi berdasarkan status, default 'green'
             $table->timestamps();
         });
     }

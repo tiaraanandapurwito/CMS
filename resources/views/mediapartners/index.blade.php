@@ -5,9 +5,9 @@
         <h1 style="color: black">Media Partner</h1>
         <a href="{{ route('mediapartners.create') }}" class="btn btn-primary">Masukkan Media Partner</a>
 
-        @if (session('success'))
+        {{-- @if (session('success'))
             <div class="alert alert-success mt-3">{{ session('success') }}</div>
-        @endif
+        @endif --}}
 
         <table class="table mt-3">
             <thead>

@@ -6,9 +6,9 @@
         <h1 style="color: black">Paket</h1>
         <a href="{{ route('paket.create') }}" class="btn btn-primary">Masukkan Paket Internet</a>
 
-        @if (session('success'))
+        {{-- @if (session('success'))
         <div class="alert alert-success mt-3">{{ session('success') }}</div>
-    @endif
+    @endif --}}
 
     <table class="table mt-3">
         <thead>

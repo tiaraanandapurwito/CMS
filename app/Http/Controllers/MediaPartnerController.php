@@ -37,17 +37,21 @@ class MediaPartnerController extends Controller
     {
         $request->validate([
             'mediapartner' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validasi agar gambar wajib diisi dan berformat tertentu
         ]);
-        $data = $request->all();
+
+        // Proses penyimpanan jika validasi berhasil
+        $mediapartner = new MediaPartner();
+        $mediapartner->mediapartner = $request->mediapartner;
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('mediapartners', 'public');
+            $imagePath = $request->file('image')->store('mediapartners', 'public');
+            $mediapartner->image = $imagePath;
         }
 
-        MediaPartner::create($data);
+        $mediapartner->save();
 
-        return redirect()->route('mediapartners.index')->with('success', 'Media Partner berhasil ditambahkan.');
+        return redirect()->route('mediapartners.index')->with('success', 'Media Partner berhasil ditambahkan!');
     }
 
     /**
