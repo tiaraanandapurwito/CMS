@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Paket')
 
 @section('content')
     @csrf

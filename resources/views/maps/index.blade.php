@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Maps GarudaLink')
 
 @section('content')
     <div class="container">

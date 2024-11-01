@@ -20,17 +20,17 @@ class TestimoniController extends Controller
     }
 
     public function edit($id)
-{
-    $testimoni = Testimoni::findOrFail($id);
-    return view('testimoni.edit', compact('testimoni'));
-}
+    {
+        $testimoni = Testimoni::findOrFail($id);
+        return view('testimoni.edit', compact('testimoni'));
+    }
 
 
     public function store(Request $request)
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
             'pekerjaan' => 'required|string|max:255',
             'pesan' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
@@ -45,7 +45,6 @@ class TestimoniController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('testimoni', 'public');
         }
-
 
         Testimoni::create($data);
         return redirect()->route('testimoni.index')->with('success', 'Testimoni berhasil ditambahkan!');

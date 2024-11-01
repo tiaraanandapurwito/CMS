@@ -1,10 +1,11 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Testimoni')
 
 @section('content')
     <div class="container">
         <h1 style="color: black">Testimoni</h1>
         <a href="/admin/testimoni/create" class="btn btn-primary">Masukkan Testimoni</a>
-        
+
 {{-- @if (session('success'))
             <div class="alert alert-success mt-3">{{ session('success') }}</div>
         @endif --}}

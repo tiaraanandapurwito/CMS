@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Media Partner')
 
 @section('content')
     <div class="container">

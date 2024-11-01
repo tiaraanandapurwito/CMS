@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Media Partner')
 
 @section('content')
     <form action="{{ route('mediapartners.update', $mediapartner->id) }}" method="POST" enctype="multipart/form-data">

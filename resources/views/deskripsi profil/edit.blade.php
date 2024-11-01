@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Profil Perusahaan')
 
 @section('content')
     <div class="container mt-5">

@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Paket')
 
 @section('content')
     @if ($errors->any())
@@ -18,7 +19,8 @@
             @method('PUT')
             <div class="form-group mb-3">
                 <label for="nama_paket" style="color: black; font-size: 20px">Nama Paket</label>
-                <input type="text" class="form-control" id="nama_paket" name="nama_paket" value="{{ $paket->nama_paket }}"
+                <input type="text" style="border-style: solid; border-width: 1px; border-color:black"
+                class="form-control" id="nama_paket" name="nama_paket" value="{{ $paket->nama_paket }}"
                     required>
             </div>
 
@@ -40,7 +42,8 @@
 
             <div class="form-group mb-3">
                 <label for="deskripsi" style="color: black; font-size: 20px">Deskripsi Paket</label>
-                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required>{{ $paket->deskripsi }}</textarea>
+                <textarea class="form-control" style="border-style: solid; border-width: 1px; border-color:black"
+                id="deskripsi" name="deskripsi" rows="4" required>{{ $paket->deskripsi }}</textarea>
                 <small class="text-muted mt-2">Nb: Jika ingin memberi baris baru kasih tanda titik diujung kata atau
                     kalimat</small>
             </div>

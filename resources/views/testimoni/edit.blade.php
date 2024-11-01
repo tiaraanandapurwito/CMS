@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', 'Dashboard Admin I Testimoni')
 
 @section('content')
 <div class="container">
@@ -19,7 +20,7 @@
             <input type="file" style="border-style: solid; border-width: 1px; border-color:black"
             class="form-control" id="image" name="image">
         </div>
-        
+
         <div class="mb-3">
             <label for="pekerjaan" class="form-label" style="color: black; font-size: 20px">Pekerjaan</label>
             <input type="text" style="border-style: solid; border-width: 1px; border-color:black"
