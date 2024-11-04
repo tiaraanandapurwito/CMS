@@ -72,11 +72,11 @@ Route::put('admin/testimoni/{id}', [TestimoniController::class, 'update'])->name
 Route::delete('/admin/testimoni/{id}/delete', [TestimoniController::class, 'destroy'])->name('testimoni.delete');
 // !Route Testimoni
 
-// route maps
+// !Route Maps
 Route::get('admin/locations', [LocationController::class, 'index'])->name('maps.index');
 Route::get('/admin/locations/create', [LocationController::class, 'create'])->name('maps.create');
 Route::post('/admin/locations/create/dd', [LocationController::class, 'store'])->name('maps.store');
 Route::get('/admin/locations/{id}/edit', [LocationController::class, 'edit'])->name('maps.edit');
 Route::put('/admin/locations/{id}', [LocationController::class, 'update'])->name('maps.update');
 Route::delete('/admin/locations/{id}/delete', [LocationController::class, 'destroy'])->name('maps.destroy');
-// route maps end
+// !Route Maps

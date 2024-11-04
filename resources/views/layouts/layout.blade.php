@@ -17,6 +17,9 @@
         <div class="card show" style="background-color: #C62E2E">
             <div class="card-body text-center">
                 <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo mb-4">
+                @error('email')
+                <p>{{ $message }}</p>
+            @enderror
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
@@ -32,9 +35,6 @@
                                 <i id="eye-icon-password" class="fas fa-eye"></i>
                             </span>
                         </div>
-                        @error('email')
-                        <p>{{ $message }}</p>
-                    @enderror
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Login</button>
 

@@ -6,7 +6,7 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <img src="{{ asset('img/xaviera.jfif') }}" alt="Profile" class="rounded-circle" width="30"
+                        <img src="{{ asset('img/logo garuda.jpeg') }}" alt="Profile" class="rounded-circle" width="30"
                             height="30">
                         <span style="margin-left: 5px">
                             {{ auth()->user()->name }}
@@ -42,7 +42,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('maps.index') ? 'active' : '' }}" href="{{ route('maps.index') }}">
+            <a class="nav-link {{ request()->routeIs('maps.index') ? 'active' : '' }}"
+                href="{{ route('maps.index') }}">
                 <i class="fas fa-map-location me-2"></i> Maps GarudaLink
             </a>
         </li>
