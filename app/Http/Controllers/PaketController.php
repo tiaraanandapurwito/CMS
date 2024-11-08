@@ -27,7 +27,7 @@ class PaketController extends Controller
         'warna_paket' => 'required|string',
     ]);
 
-    $deskripsi = $request->deskripsi_paket . " Kecepatan: " . $request->input('kecepatan') . " Mbps";
+    $deskripsi = $request->deskripsi_paket;
     Paket::create([
         'nama_paket' => $request->nama_paket,
         'harga' => $request->harga_paket,

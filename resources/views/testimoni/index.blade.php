@@ -4,7 +4,7 @@
 @section('content')
     <div class="container px-3">
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
-            <h1 class="h2 fw-bold mb-0" style="color: black; background-color: #f1f3f5; padding: 1rem; border-radius: 0.5rem;">Testimoni</h1>
+            <h1 class="h2 fw-bold mb-0" style="color: black; padding: 1rem; border-radius: 0.5rem;">Testimoni</h1>
             <a href="/admin/testimoni/create" class="btn btn-primary">
                 <i class="fas fa-plus-circle me-2"></i>Masukkan Testimoni
             </a>
@@ -141,11 +141,11 @@
 
     <style>
         /* Enhanced Header Styling */
-        h1 {
+        /* h1 {
             background-color: #f1f3f5;
             padding: 1rem;
             border-radius: 0.5rem;
-        }
+        } */
 
         /* Improved Card Styling */
         .card {

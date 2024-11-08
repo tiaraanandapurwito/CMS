@@ -32,7 +32,7 @@ class AuthController extends Controller
             'email' => 'Email atau password yang anda masukkan salah! Silahkan coba lagi',
         ]);
     }
-
+    
     // Logout function (optional)
     public function logout(Request $request)
     {

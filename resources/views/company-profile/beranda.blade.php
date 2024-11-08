@@ -114,7 +114,7 @@
                     </p>
                     <p>
                         <span class="legend-blue"></span>
-                        <strong>Perencanaan</strong> - Tiang yang sedang dalam perencanaan pemasangan
+                        <strong>Tiang Perencanaan</strong> - Tiang yang sedang dalam perencanaan pemasangan
                     </p>
                     <p>
                         <span class="legend-red"></span>

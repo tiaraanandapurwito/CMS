@@ -21,7 +21,7 @@
                         <p class="mb-1">Deskripsi: {{ $paket->deskripsi }}</p>
                         <p class="mb-3">Warna Paket:
                             <span class="d-inline-block rounded-circle"
-                                  style="width: 20px; height: 20px; background-color: {{ $paket->warna_paket }};">
+                                style="width: 20px; height: 20px; background-color: {{ $paket->warna_paket }};">
                             </span>
                         </p>
                         <div class="d-flex gap-2">
@@ -60,12 +60,14 @@
                                 <div class="text-truncate" style="max-width: 250px;">{{ $paket->deskripsi }}</div>
                             </td>
                             <td>
-                                <div class="rounded-circle" style="width: 20px; height: 20px; background-color: {{ $paket->warna_paket }};"></div>
+                                <div class="rounded-circle"
+                                    style="width: 20px; height: 20px; background-color: {{ $paket->warna_paket }};"></div>
                             </td>
                             <td>
                                 <div class="d-flex gap-2">
                                     <a href="{{ route('paket.edit', $paket) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="/admin/paket/{{ $paket->id }}/delete" method="POST" class="d-inline-block">
+                                    <form action="/admin/paket/{{ $paket->id }}/delete" method="POST"
+                                        class="d-inline-block">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -108,7 +110,8 @@
                 padding: 1rem;
             }
 
-            .btn-group-sm > .btn, .btn-sm {
+            .btn-group-sm>.btn,
+            .btn-sm {
                 padding: 0.25rem 0.5rem;
                 font-size: 0.875rem;
             }

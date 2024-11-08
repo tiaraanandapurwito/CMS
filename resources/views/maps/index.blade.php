@@ -18,7 +18,8 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <h6 class="card-title mb-0 fw-bold">{{ $location->name }}</h6>
-                            <span style="display:inline-block; width:20px; height:20px; background-color:{{ $location->color }}; border:1px solid #000;"></span>
+                            <span
+                                style="display:inline-block; width:20px; height:20px; background-color:{{ $location->color }}; border:1px solid #000;"></span>
                         </div>
                         <div class="location-details mb-3">
                             <div class="row g-2">
@@ -35,18 +36,18 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 @switch($location->status)
-                                    @case('active')
-                                        <span class="badge bg-success">Aktif</span>
-                                        @break
-                                    @case('inactive')
-                                        <span class="badge bg-warning">Perencanaan</span>
-                                        @break
-                                    @case('maintenance')
-                                        <span class="badge bg-danger">Tidak Bisa Dipasang</span>
-                                        @break
-                                    @default
-                                        <span class="badge bg-secondary">Unknown</span>
-                                @endswitch
+                                @case('active')
+                                    <span class="badge bg-success">Aktif</span>
+                                    @break
+                                @case('inactive')
+                                    <span class="badge bg-primary">Perencanaan</span>
+                                    @break
+                                @case('maintenance')
+                                    <span class="badge bg-danger">Tidak Bisa Dipasang</span>
+                                    @break
+                                @default
+                                    <span class="badge bg-secondary">Status Tidak Diketahui</span>
+                            @endswitch
                             </div>
                             <div class="d-flex gap-2">
                                 <a href="{{ route('maps.edit', $location) }}" class="btn btn-warning btn-sm">
@@ -89,21 +90,22 @@
                             <td>{{ $location->longitude }}</td>
                             <td>
                                 @switch($location->status)
-                                    @case('active')
-                                        <span class="badge bg-success">Aktif</span>
-                                        @break
-                                    @case('inactive')
-                                        <span class="badge bg-warning">Perencanaan</span>
-                                        @break
-                                    @case('maintenance')
-                                        <span class="badge bg-danger">Tidak Bisa Dipasang</span>
-                                        @break
-                                    @default
-                                        <span class="badge bg-secondary">Unknown</span>
-                                @endswitch
+                                @case('active')
+                                    <span class="badge bg-success">Aktif</span>
+                                    @break
+                                @case('inactive')
+                                    <span class="badge bg-primary">Perencanaan</span>
+                                    @break
+                                @case('maintenance')
+                                    <span class="badge bg-danger">Tidak Bisa Dipasang</span>
+                                    @break
+                                @default
+                                    <span class="badge bg-secondary">Status Tidak Diketahui</span>
+                            @endswitch
                             </td>
                             <td class="text-center">
-                                <span style="display:inline-block; width:20px; height:20px; background-color:{{ $location->color }}; border:1px solid #000;"></span>
+                                <span
+                                    style="display:inline-block; width:20px; height:20px; background-color:{{ $location->color }}; border:1px solid #000;"></span>
                             </td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-center">
@@ -220,7 +222,7 @@
 
         .btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 @endsection

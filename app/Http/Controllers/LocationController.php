@@ -23,9 +23,6 @@ class LocationController extends Controller
     // Menyimpan data lokasi baru ke database
     public function store(Request $request)
     {
-        // Log the request data
-        // \Log::info($request->all());
-
         // Validate the incoming request
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -34,6 +31,9 @@ class LocationController extends Controller
             'status' => 'required|in:active,inactive,maintenance',
             'color' => 'required|in:red,green,blue',
         ]);
+
+        // Set default status to 'inactive' if status is not provided
+        $validatedData['status'] = $validatedData['status'] ?? 'inactive';
 
         // Create a new location
         Location::create($validatedData);
@@ -52,7 +52,7 @@ class LocationController extends Controller
     // Mengupdate data lokasi yang sudah ada
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
@@ -61,12 +61,7 @@ class LocationController extends Controller
         ]);
 
         $location = Location::findOrFail($id);
-        $location->name = $request->input('name');
-        $location->latitude = $request->input('latitude');
-        $location->longitude = $request->input('longitude');
-        $location->status = $request->input('status'); // This will store 'active', 'inactive', or 'maintenance'
-        $location->color = $request->input('color');
-        $location->save();
+        $location->update($validatedData);
 
         return redirect()->route('maps.index')->with('success', 'Titik lokasi berhasil diupdate');
     }

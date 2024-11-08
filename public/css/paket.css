@@ -1,41 +1,38 @@
-/* paket start*/
+/* paket start */
 #layanan {
     font-family: "Raleway", Sans-serif;
     font-size: 34px;
-  }
+}
 
-  #jenis {
+#jenis {
     font-family: 'Karla', sans-serif;
     font-size: 18px;
-  }
+}
 
-  #paket-section {
+#paket-section {
     padding: 60px 0;
     background-color: white;
-  }
+}
 
-  #paket-section .container {
+#paket-section .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
-  }
+}
 
-  #paket-section .row {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
+/* Row styling */
+#paket-section .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
     gap: 20px;
-    margin: 0 auto;
-  }
+}
 
-  #paket-section .col-lg-3 {
-    flex: 1;
-    min-width: 0;
-    max-width: 25%;
-  }
+/* Card styling */
+/* .container-paket  {
+    width: 33.33333%;
+} */
 
-  .paket-card {
+.paket-card {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -44,61 +41,67 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-  }
+}
 
-  .paket-card:hover {
+.paket-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .paket-card .card-header {
+.paket-card .card-header {
     padding: 15px 10px;
     text-align: center;
+}
+
+.paket-card .card-header .card-title {
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #ffffff;
-  }
+    margin: 0;
+}
 
-  .paket-card .card-body {
+.paket-card .card-body {
     padding: 20px 15px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
 
-  .card-price {
+.card-price {
     font-size: 1.8rem;
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 15px;
     text-align: center;
-  }
+}
 
-  .card-price span {
+.card-price span {
     font-size: 0.9rem;
     font-weight: 400;
     color: #7f8c8d;
-  }
+}
 
-  .paket-card .list-group {
+.paket-card .list-group {
     margin-bottom: 15px;
     flex-grow: 1;
-  }
+    list-style-position: inside;
+    padding-left: 0;
+}
 
-  .paket-card .list-group-item {
+.paket-card .list-group-item {
     border: none;
     padding: 6px 0;
     font-size: 0.85rem;
     color: black;
     background-color: transparent;
     font-family: 'Karla', sans-serif;
-  }
+    line-height: 1.4;
+}
 
-  .paket-card .btn {
-    width: 100%;
+.paket-card .btn {
     padding: 10px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -108,32 +111,31 @@
     transition: all 0.3s ease;
     border: none;
     color: #ffffff;
-  }
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
 
-  /* Color schemes for different packages */
-  .paket-card:nth-child(1) .card-header, .paket-card:nth-child(1) .btn { background-color: #3498db; }
-  .paket-card:nth-child(2) .card-header, .paket-card:nth-child(2) .btn { background-color: #2ecc71; }
-  .paket-card:nth-child(3) .card-header, .paket-card:nth-child(3) .btn { background-color: #e74c3c; }
-  .paket-card:nth-child(4) .card-header, .paket-card:nth-child(4) .btn { background-color: #f39c12; }
-
-  .paket-card .btn:hover {
+.paket-card .btn:hover {
     opacity: 0.9;
-  }
+    transform: scale(1.05);
+}
 
-  @media (max-width: 1200px) {
+/* Remove col-lg-3 specific styling as we're using CSS Grid */
+#paket-section .col-lg-3 {
+    width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
     #paket-section .row {
-      flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
-    #paket-section .col-lg-3 {
-      flex: 0 0 calc(50% - 20px);
-      max-width: calc(50% - 20px);
-    }
-  }
+}
 
-  @media (max-width: 768px) {
-    #paket-section .col-lg-3 {
-      flex: 0 0 100%;
-      max-width: 100%;
+@media (max-width: 768px) {
+    #paket-section {
+        background-color: red;
     }
-  }
-  /* paket end */
+}
+/* paket end */
