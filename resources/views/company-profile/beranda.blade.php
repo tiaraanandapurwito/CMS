@@ -101,25 +101,107 @@
     <!-- Media partner section end -->
 
     <!-- Maps start -->
-    <div class="container-fluid">
-        <div class="container text-center mb-4">
-            <h5 class="display-2" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
-            <div class="d-flex justify-content-center"> <!-- Center the flex items -->
-                <div id="map"></div>
-                <div class="legend">
-                    <p><strong>Keterangan Titik:</strong></p>
-                    <p>
-                        <span class="legend-green"></span>
-                        <strong>Tiang Jaringan Terpasang</strong> - Tiang yang sudah aktif dan memberikan layanan
-                    </p>
-                    <p>
-                        <span class="legend-blue"></span>
-                        <strong>Tiang Perencanaan</strong> - Tiang yang sedang dalam perencanaan pemasangan
-                    </p>
-                    <p>
-                        <span class="legend-red"></span>
-                        <strong>Tidak Bisa Dipasang</strong> - Tiang yang tidak dapat dipasang
-                    </p>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h1>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row g-4">
+                <!-- Map Column -->
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Peta Jaringan
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="map" style="height: 500px;" class="rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend & Form Column -->
+                <div class="col-lg-4">
+                    <!-- Legend Card -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white border-bottom border-2">
+                            <h5 class="card-title mb-0 d-flex align-items-center">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Keterangan Titik Jaringan
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Tiang Terpasang -->
+                            <div class="legend-item position-relative mb-4 ps-5 py-2">
+                                <div class="legend-marker bg-success"></div>
+                                <div class="legend-content">
+                                    <h6 class="fw-bold mb-1">Tiang Jaringan Terpasang</h6>
+                                    <p class="text-muted mb-0 small">Tiang yang sudah aktif dan memberikan layanan</p>
+                                </div>
+                            </div>
+
+                            <!-- Tiang Perencanaan -->
+                            <div class="legend-item position-relative mb-4 ps-5 py-2">
+                                <div class="legend-marker bg-primary"></div>
+                                <div class="legend-content">
+                                    <h6 class="fw-bold mb-1">Tiang Perencanaan</h6>
+                                    <p class="text-muted mb-0 small">Tiang yang sedang dalam perencanaan pemasangan</p>
+                                </div>
+                            </div>
+
+                            <!-- Tidak Bisa Dipasang -->
+                            <div class="legend-item position-relative ps-5 py-2">
+                                <div class="legend-marker bg-danger"></div>
+                                <div class="legend-content">
+                                    <h6 class="fw-bold mb-1">Tidak Bisa Dipasang</h6>
+                                    <p class="text-muted mb-0 small">Tiang yang tidak dapat dipasang</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Card -->
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-ruler me-2"></i>
+                                Cek Jarak ke Lokasi
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="checkRadiusForm">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="poleName" class="form-label">Nama Tiang</label>
+                                    <select id="poleName" name="pole_name" class="form-select">
+                                        <option value="">Pilih Tiang</option>
+                                        @foreach ($locations as $location)
+                                            <option value="{{ $location->name }}">{{ $location->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="homeLatitude" class="form-label">Latitude Rumah</label>
+                                    <input type="text" class="form-control" id="homeLatitude" name="latitude"
+                                        placeholder="Contoh: -0.123456">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="homeLongitude" class="form-label">Longitude Rumah</label>
+                                    <input type="text" class="form-control" id="homeLongitude" name="longitude"
+                                        placeholder="Contoh: 101.123456">
+                                </div>
+                                <button type="button" class="btn btn-primary w-100" onclick="checkDistance()">
+                                    <i class="fas fa-search me-2"></i>Cek Jarak
+                                </button>
+                            </form>
+                            <div id="resultMessage" class="alert mt-3" style="display: none;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,48 +212,155 @@
 
 @push('style')
     <link href="{{ asset('css/beranda.css') }}?v=1.0" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
     <style>
-        .legend {
-            margin-top: 20px;
-            font-size: 17px;
-            padding-left: 20px;
+        .legend-item {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .legend span {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            margin-right: 5px;
+        .legend-item:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+            transform: translateX(5px);
+        }
+
+        .legend-marker {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8),
+                0 0 0 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
         }
 
-        .legend-green {
-            background-color: green;
+        .legend-content {
+            position: relative;
         }
 
-        .legend-blue {
-            background-color: blue;
+        .legend-content h6 {
+            color: #2c3e50;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
         }
 
-        .legend-red {
-            background-color: red;
+        .legend-content p {
+            color: #6c757d;
+            line-height: 1.4;
         }
+
+        .card-header {
+            background: linear-gradient(to right, #ffffff, #f8f9fa);
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .card-header .card-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .card-header .fas {
+            font-size: 1.2rem;
+        }
+
+        /* Animasi pulse untuk marker */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1),
+                    0 0 0 3px rgba(255, 255, 255, 0.8),
+                    0 0 0 4px rgba(0, 0, 0, 0.1);
+            }
+
+            70% {
+                box-shadow: 0 0 0 6px rgba(0, 0, 0, 0),
+                    0 0 0 3px rgba(255, 255, 255, 0.8),
+                    0 0 0 4px rgba(0, 0, 0, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0),
+                    0 0 0 3px rgba(255, 255, 255, 0.8),
+                    0 0 0 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* Hover effect untuk card */
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .legend-item {
+                padding-left: 3.5rem !important;
+            }
+
+            .legend-marker {
+                left: 8px;
+            }
+
+            .card-header .card-title {
+                font-size: 1rem;
+            }
+        }
+
+        .card {
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .legend-dot {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+        }
+
+        .btn-primary {
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     </style>
 @endpush
 
 @push('script')
     <script>
         // Initialize map
-        var map = L.map('map').setView([0.4783470, 	101.3799990], 15);
+        var map = L.map('map', {
+            fullscreenControl: true
+        }).setView([0.4783470, 101.3799990], 15);
 
-        // Add tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
         // Data titik lokasi dari server
-        var locations = @json($locations); // Convert PHP data to JavaScript
+        var locations = @json($locations);
+        var locationMarkers = {};
 
         // Function to determine marker color based on status
         function getMarkerColor(status) {
@@ -183,28 +372,62 @@
                 case 'maintenance':
                     return 'red';
                 default:
-                    return 'gray'; // Default color
+                    return 'gray';
             }
         }
 
-        // Add marker for each location
+        // Add markers to map
         locations.forEach(function(location) {
             var color = getMarkerColor(location.status);
 
-            // Create a custom icon with color
-            var marker = L.divIcon({
+            // Create a custom icon with the color
+            var markerIcon = L.divIcon({
                 className: 'custom-marker',
                 html: '<div style="background-color:' + color +
                     '; width: 20px; height: 20px; border-radius: 50%;"></div>',
                 iconSize: [20, 20]
             });
 
-            L.marker([location.latitude, location.longitude], {
-                    icon: marker
+            // Place marker on map and save the coordinates
+            var marker = L.marker([location.latitude, location.longitude], {
+                    icon: markerIcon
                 })
                 .addTo(map)
-                .bindPopup(location.name); // Show location name on marker click
+                .bindPopup('<strong>' + location.name + '</strong><br>Status: ' + location.status);
+
+            locationMarkers[location.name] = marker.getLatLng(); // Save coordinates by name
         });
+
+        // Check distance function
+        function checkDistance() {
+            var poleName = document.getElementById('poleName').value;
+            var homeLatitude = parseFloat(document.getElementById('homeLatitude').value);
+            var homeLongitude = parseFloat(document.getElementById('homeLongitude').value);
+
+            if (poleName && !isNaN(homeLatitude) && !isNaN(homeLongitude)) {
+                var poleLocation = locationMarkers[poleName];
+                if (poleLocation) {
+                    var homeLocation = L.latLng(homeLatitude, homeLongitude);
+                    var distance = homeLocation.distanceTo(poleLocation); // Calculate distance in meters
+
+                    var resultMessage = document.getElementById('resultMessage');
+                    resultMessage.style.display = 'block';
+                    if (distance <= 300) {
+                        resultMessage.className = 'alert alert-success';
+                        resultMessage.innerHTML =
+                            `Rumah Anda berada dalam radius 300m dari tiang <strong>${poleName}</strong>.`;
+                    } else {
+                        resultMessage.className = 'alert alert-warning';
+                        resultMessage.innerHTML =
+                            `Rumah Anda berada di luar radius 300m dari tiang <strong>${poleName}</strong>.`;
+                    }
+                } else {
+                    alert('Lokasi tiang yang dipilih tidak tersedia di peta.');
+                }
+            } else {
+                alert('Pastikan semua data telah diisi dengan benar.');
+            }
+        }
     </script>
 
     <style>

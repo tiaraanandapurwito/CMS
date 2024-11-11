@@ -28,11 +28,11 @@
     color: white;
 }
 
-#btn{
+#btn {
     width: 150px;
     height: 36px;
     margin-top: 20px;
-    background: rgb(240, 18, 18);
+    background: #C62E2E;
     border-radius: 7px;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
@@ -40,12 +40,12 @@
     border: none;
     transition: 0.5s ease;
     cursor: pointer;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 #btn:hover{
-    background: rgb(255, 255, 255);
-    color: rgb(13, 11, 11);
+    background: #FFAF00;
+    color: rgb(0, 0, 0);
 }
 /* home section end */
 
@@ -54,75 +54,138 @@
     background-color: rgb(255, 255, 255);
 }
 
-@media screen and(min-width:550px){
-  #keunggulan h5.display-3{
-    font-size: 65px;
-  }
-}
-@media screen and(min-width:400px){
-  #keunggulan h5.display-3{
-    font-size: 45px;
-  }
-}
 #keunggulan h6 {
-  font-size: 19px;
-  font-weight: 70;
-  font-family: 'Karla', sans-serif;
-  color: black;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 530;
+    color: black;
 }
 
 #keunggulan h5.display-3 {
-  font-family: "Raleway", Sans-serif;
-  font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
 }
 
 .keunggulan {
-  display: flex;
+    display: flex;
 }
 
-.lingkaran{
-    display: inline-block;
+.lingkaran {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     width: 150px;
-    margin: auto;
     height: 150px;
-    color: rgb(255, 255, 255);
+    color: white;
     background-color: #C62E2E;
+    transition: transform 0.3s;
+    margin: auto; /* centers icon in container */
 }
 
-.lingkaran i{
-    position: relative;
-    top: 33px;
-    gap: 1rem;
+.lingkaran i {
+    font-size: 4rem;
 }
 
 .card-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.keunggulan .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers text with icon */
 }
 
 @media (max-width: 768px) {
-  .pt-2.keunggulan {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    #keunggulan h5.display-3 {
+        font-size: 2rem;
+    }
+
+    #keunggulan h6 {
+        font-size: 16px;
+    }
+
+    .pt-2.keunggulan {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .lingkaran {
+        width: 90px;
+        height: 90px;
+    }
+
+    .lingkaran i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    #keunggulan h5.display-3 {
+        font-size: 24px;
+    }
+    #keunggulan h6 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    #keunggulan h5.display-3 {
+        font-size: 20px;
+    }
+    #keunggulan h6 {
+        font-size: 12px;
+    }
+}
+
+/* Hover effect for icons */
+.lingkaran:hover {
+    transform: scale(1.05);
+}
+
+/* Mengatur heading ukuran font secara lebih proporsional */
+@media (max-width: 550px) {
+    #keunggulan h5.display-3 {
+        font-size: 24px;
+    }
+    #keunggulan h6 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    #keunggulan h5.display-3 {
+        font-size: 20px;
+    }
+    #keunggulan h6 {
+        font-size: 12px;
+    }
 }
 /* keunggulan section end */
 
 /* media-partner section start */
 #media-partner{
     background-color: rgb(255, 255, 255);
-    font-size: 40px;
-    font-family: "Raleway", Sans-serif;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #media-partner.display-3 {
-  margin-top: 15px;
-  font-size: 45px;
+    margin-top: 15px;
+    /* font-size: 45px; */
+}
+
+@media (max-width: 768px) {
+    /* Adjust heading size */
+    #media-partner {
+        font-size: 2rem;
+    }
 }
 /* media-partner section end */
 
@@ -159,7 +222,7 @@
 #maps {
     background-color: rgb(255, 255, 255);
     font-size: 35px;
-    font-family: "Raleway", Sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #000;
     margin-bottom: 20px; /* Add margin for spacing */
 }
@@ -191,4 +254,31 @@
     height: 100% !important;
 }
 
+@media (max-width: 768px) {
+    /* Adjust heading size */
+    #maps {
+        font-size: 2rem;
+    }
+
+    /* Stack map and legend vertically */
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust map height on mobile */
+    #map {
+        height: 300px;
+    }
+
+    /* Resize legend font and padding */
+    .legend {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}
+
+.container-lokasi {
+    padding-bottom: 10px;
+}
 /* maps section end

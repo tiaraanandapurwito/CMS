@@ -266,5 +266,9 @@ footer {
     .footer-section {
       flex-basis: 100%;
     }
+
+    .btn-submit {
+        width: 25%;
+    }
   }
   /* footer section end */
