@@ -105,11 +105,11 @@
         <div class="container">
             <!-- Header -->
             <div class="text-center mb-5">
-                <h1 class="display-4 fw-bold" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h1>
+                <h5 class="display-2" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
             </div>
 
             <!-- Main Content -->
-            <div class="row g-4">
+            <div class="row g-7">
                 <!-- Map Column -->
                 <div class="col-lg-8">
                     <div class="card shadow-sm">
@@ -211,10 +211,11 @@
 @endsection
 
 @push('style')
-    <link href="{{ asset('css/beranda.css') }}?v=1.0" rel="stylesheet">
+    <link href="{{ asset('css/beranda.css') }}" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .legend-item {
             transition: all 0.3s ease;
@@ -343,7 +344,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
-    </style>
 @endpush
 
 @push('script')
@@ -400,34 +400,53 @@
 
         // Check distance function
         function checkDistance() {
-            var poleName = document.getElementById('poleName').value;
-            var homeLatitude = parseFloat(document.getElementById('homeLatitude').value);
-            var homeLongitude = parseFloat(document.getElementById('homeLongitude').value);
+    var poleName = document.getElementById('poleName').value;
+    var homeLatitude = parseFloat(document.getElementById('homeLatitude').value);
+    var homeLongitude = parseFloat(document.getElementById('homeLongitude').value);
 
-            if (poleName && !isNaN(homeLatitude) && !isNaN(homeLongitude)) {
-                var poleLocation = locationMarkers[poleName];
-                if (poleLocation) {
-                    var homeLocation = L.latLng(homeLatitude, homeLongitude);
-                    var distance = homeLocation.distanceTo(poleLocation); // Calculate distance in meters
+    console.log('Nama Tiang:', poleName);
+    console.log('Latitude Rumah:', homeLatitude);
+    console.log('Longitude Rumah:', homeLongitude);
 
-                    var resultMessage = document.getElementById('resultMessage');
-                    resultMessage.style.display = 'block';
-                    if (distance <= 300) {
-                        resultMessage.className = 'alert alert-success';
-                        resultMessage.innerHTML =
-                            `Rumah Anda berada dalam radius 300m dari tiang <strong>${poleName}</strong>.`;
-                    } else {
-                        resultMessage.className = 'alert alert-warning';
-                        resultMessage.innerHTML =
-                            `Rumah Anda berada di luar radius 300m dari tiang <strong>${poleName}</strong>.`;
-                    }
-                } else {
-                    alert('Lokasi tiang yang dipilih tidak tersedia di peta.');
-                }
+    if (poleName && !isNaN(homeLatitude) && !isNaN(homeLongitude)) {
+        var poleLocation = locationMarkers[poleName];
+        if (poleLocation) {  // Periksa apakah poleLocation tersedia
+            var homeLocation = L.latLng(homeLatitude, homeLongitude);
+            var distance = poleLocation.distanceTo(homeLocation);
+
+            if (distance <= 300) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Dalam Radius!',
+                    text: `Rumah berada dalam radius 300 meter dari tiang ${poleName}.`,
+                    confirmButtonText: 'OK'
+                });
             } else {
-                alert('Pastikan semua data telah diisi dengan benar.');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Diluar Radius!',
+                    text: `Rumah berada di luar radius 300 meter dari tiang ${poleName}.`,
+                    confirmButtonText: 'OK'
+                });
             }
+        } else {
+            console.error('Tidak ditemukan data lokasi untuk tiang:', poleName);
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Tidak Ditemukan',
+                text: 'Lokasi tiang yang dipilih tidak ditemukan.',
+                confirmButtonText: 'OK'
+            });
         }
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Data Tidak Lengkap!',
+            text: 'Pastikan semua data telah diisi dengan benar.',
+            confirmButtonText: 'OK'
+        });
+    }
+}
     </script>
 
     <style>

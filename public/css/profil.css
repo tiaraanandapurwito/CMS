@@ -15,10 +15,10 @@ tentang kami start */
 
   .heading {
     text-align: center;
-    font-family: "Raleway", Sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 30px;
     color: #000;
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .bungkus {
@@ -100,9 +100,9 @@ tentang kami start */
   #visi-misi h2 {
     font-size: 35px;
     color: #000000;
-    font-weight: 500;
+    /* font-weight: 500; */
     text-transform: uppercase;
-    font-family: "Raleway", Sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding-top: 2rem;
   }
 
@@ -208,9 +208,9 @@ tentang kami start */
   }
 
   .section-header .title {
-    font-size: 30px;
-    font-weight: 500;
-    font-family: "Raleway", Sans-serif;
+    font-size: 35px;
+    /* font-weight: 500; */
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     margin-bottom: 30px;
   }

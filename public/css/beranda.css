@@ -44,8 +44,8 @@
 }
 
 #btn:hover{
-    background: #FFAF00;
-    color: rgb(0, 0, 0);
+    background: #df2810;
+    color: rgb(209, 196, 196);
 }
 /* home section end */
 
@@ -232,7 +232,7 @@
 }
 
 #map {
-    height: 500px; /* Set a specific height for the map */
+    height: 50px; /* Set a specific height for the map */
     width: 100%; /* Make the map responsive */
     border: 2px solid #555;
     border-radius: 8px;

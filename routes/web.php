@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeskripsiProfilController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MediaPartnerController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TestimoniController;
 
@@ -80,3 +81,11 @@ Route::get('/admin/locations/{id}/edit', [LocationController::class, 'edit'])->n
 Route::put('/admin/locations/{id}', [LocationController::class, 'update'])->name('maps.update');
 Route::delete('/admin/locations/{id}/delete', [LocationController::class, 'destroy'])->name('maps.destroy');
 // !Route Maps
+
+// Route to store the guest message
+Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+
+// Route for the admin to view all messages
+Route::get('/admin/messages', [MessageController::class, 'index'])->name('contact pesan.index');
+
+

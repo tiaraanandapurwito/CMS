@@ -65,11 +65,11 @@
                 <i class="fas fa-wifi me-2"></i> Paket
             </a>
         </li>
-        {{-- <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('superadmin') ? 'active' : '' }}"
-                href="{{ route('paket.index') }}">
-                <i class="fa-solid fa-user-tie me-2"></i> Superadmin
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('contact pesan.index') ? 'active' : '' }}"
+                href="{{ route('contact pesan.index') }}">
+                <i class="fa-solid fa-message me-2"></i> Pesan
             </a>
-        </li> --}}
+        </li>
     </ul>
 </div>

@@ -3,6 +3,10 @@
 @section('content')
     <!-- Paket Section Start -->
     <section id="paket-section" class="py-5">
+        <div class="container text-center" data-aos="fade-right">
+          <h5 class="display-5 mb-3" id="layanan">Paket Layanan Internet & WiFi</h5>
+          <h2 class="mb-1" id="jenis">Pilih paket yang sesuai dengan kebutuhan internet dan wifi Anda</h2>
+    <section id="paket-section" class="py-5">
         <div class="container">
             <div class="kotak-flex" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));  gap: 24px;">
                 @foreach ($pakets as $paket)
