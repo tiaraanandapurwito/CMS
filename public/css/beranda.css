@@ -47,6 +47,94 @@
     background: #df2810;
     color: rgb(209, 196, 196);
 }
+
+/* Media Queries untuk Responsive */
+@media screen and (max-width: 1024px) {
+    #home .content {
+        padding-top: 180px;
+        margin-left: 40px;
+    }
+
+    #home .content h3 {
+        font-size: 40px;
+    }
+
+    #home .content p {
+        font-size: 20px;
+    }
+
+    .carousel-item img {
+        height: 106vh !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home .content {
+        padding-top: 150px;
+        margin-left: 30px;
+    }
+
+    #home .content h3 {
+        font-size: 35px;
+    }
+
+    #home .content p {
+        font-size: 18px;
+    }
+
+    .carousel-item img {
+        height: 103vh !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #home .content {
+        padding-top: 120px;
+        margin-left: 20px;
+    }
+
+    #home .content h3 {
+        font-size: 30px;
+    }
+
+    #home .content p {
+        font-size: 16px;
+    }
+
+    #btn {
+        width: 130px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .carousel-item img {
+        height: 90vh !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #home .content {
+        padding-top: 100px;
+        margin-left: 15px;
+    }
+
+    #home .content h3 {
+        font-size: 25px;
+    }
+
+    #home .content p {
+        font-size: 14px;
+    }
+
+    #btn {
+        width: 120px;
+        height: 32px;
+        font-size: 14px;
+    }
+    .carousel-item img {
+        height: 90vh !important;
+    }
+}
 /* home section end */
 
 /* keunggulan section start */
@@ -80,7 +168,7 @@
     color: white;
     background-color: #C62E2E;
     transition: transform 0.3s;
-    margin: auto; /* centers icon in container */
+    margin: auto;
 }
 
 .lingkaran i {
@@ -98,22 +186,134 @@
 .keunggulan .col-md-4 {
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers text with icon */
+    align-items: center;
 }
 
-@media (max-width: 768px) {
+.lingkaran:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries dengan penyesuaian spacing */
+@media screen and (max-width: 1024px) {
+    .container-fluid.keunggulan {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .container.text-center {
+        margin-bottom: 1.5rem;
+    }
+
+    .lingkaran {
+        width: 130px;
+        height: 130px;
+    }
+
+    .lingkaran i {
+        font-size: 3.5rem;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid.keunggulan {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .container.text-center {
+        margin-bottom: 1rem;
+    }
+
     #keunggulan h5.display-3 {
-        font-size: 2rem;
+        font-size: 28px;
+        /* margin-bottom: 0.5rem; */
     }
 
     #keunggulan h6 {
-        font-size: 16px;
+        font-size: 14px;
+        /* margin-bottom: 1.5rem; */
     }
 
     .pt-2.keunggulan {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: none;
+        /* gap: 1.5rem; */
+    }
+
+    .lingkaran {
+        width: 125px;
+        height: 125px;
+    }
+
+    .lingkaran i {
+        font-size: 4rem;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container-fluid.keunggulan {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .container.text-center {
+        margin-bottom: 0.8rem;
+    }
+
+    #keunggulan h5.display-3 {
+        font-size: 24px;
+        /* margin-bottom: 0.3rem; */
+    }
+
+    #keunggulan h6 {
+        font-size: 13px;
+        /* margin-bottom: 1rem; */
+    }
+
+    .lingkaran {
+        width: 100px;
+        height: 100px;
+    }
+
+    .lingkaran i {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .pt-2.keunggulan {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container-fluid.keunggulan {
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.8rem !important;
+    }
+
+    .container.text-center {
+        margin-bottom: 1rem;
+    }
+
+    #keunggulan h5.display-3 {
+        font-size: 20px;
+        /* margin-bottom: 0.2rem; */
+    }
+
+    #keunggulan h6 {
+        font-size: 12px;
+        /* margin-bottom: 0.8rem; */
     }
 
     .lingkaran {
@@ -122,50 +322,33 @@
     }
 
     .lingkaran i {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .card-title {
+        font-size: 13px;
+        margin-top: 6px;
+    }
+
+    .pt-2.keunggulan {
+        gap: 0.8rem;
     }
 }
 
-@media (max-width: 550px) {
-    #keunggulan h5.display-3 {
-        font-size: 24px;
-    }
-    #keunggulan h6 {
-        font-size: 14px;
-    }
+/* Penyesuaian spacing untuk container */
+.container-fluid.keunggulan {
+    padding-top: 5.5rem !important;
+    padding-bottom: 1rem!important;
 }
 
-@media (max-width: 400px) {
-    #keunggulan h5.display-3 {
-        font-size: 20px;
-    }
-    #keunggulan h6 {
-        font-size: 12px;
-    }
+.container.text-center {
+    margin-bottom: 1rem;
 }
 
-/* Hover effect for icons */
-.lingkaran:hover {
-    transform: scale(1.05);
-}
-
-/* Mengatur heading ukuran font secara lebih proporsional */
-@media (max-width: 550px) {
-    #keunggulan h5.display-3 {
-        font-size: 24px;
-    }
-    #keunggulan h6 {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 400px) {
-    #keunggulan h5.display-3 {
-        font-size: 20px;
-    }
-    #keunggulan h6 {
-        font-size: 12px;
-    }
+/* Penyesuaian spacing untuk row */
+.row.pt-2.keunggulan {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 /* keunggulan section end */
 
@@ -178,18 +361,14 @@
 
 #media-partner.display-3 {
     margin-top: 15px;
-    /* font-size: 45px; */
 }
 
 @media (max-width: 768px) {
-    /* Adjust heading size */
     #media-partner {
         font-size: 2rem;
     }
 }
-/* media-partner section end */
 
-/* logo media-partner section start */
 @keyframes slide {
     from {
       transform: translateX(0);
@@ -197,7 +376,7 @@
     to {
       transform: translateX(-100%);
     }
-  }
+}
 
 .logos {
     overflow: hidden;
@@ -210,12 +389,208 @@
 .logos-slide {
     display: inline-block;
     animation: 10s slide infinite linear;
-  }
+}
 
-  .logos-slide img {
+.logos-slide img {
     height: 50px;
     margin: 0 50px;
-  }
+}
+
+/* Media Queries yang Ditingkatkan */
+@media screen and (min-width: 1441px) {
+    .logos {
+        padding: 70px 0;
+    }
+
+    .logos-slide img {
+        height: 60px;
+        margin: 0 60px;
+    }
+
+    #media-partner {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .logos {
+        padding: 50px 0;
+    }
+
+    .logos-slide img {
+        height: 55px;
+        margin: 0 55px;
+    }
+
+    #media-partner {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .logos {
+        padding: 45px 0;
+    }
+
+    .logos-slide img {
+        height: 45px;
+        margin: 0 45px;
+    }
+
+    #media-partner {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .container-fluid.pt-5 {
+        padding-top: 3rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logos {
+        padding: 35px 0;
+    }
+
+    .logos-slide img {
+        height: 40px;
+        margin: 0 35px;
+    }
+
+    #media-partner {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .container-fluid.pt-5 {
+        padding-top: 2.5rem !important;
+    }
+
+    .logos-slide {
+        animation-duration: 15s;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logos {
+        padding: 30px 0;
+    }
+
+    .logos-slide img {
+        height: 35px;
+        margin: 0 25px;
+    }
+
+    #media-partner {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .container-fluid.pt-5 {
+        padding-top: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logos {
+        padding: 25px 0;
+    }
+
+    .logos-slide img {
+        height: 30px;
+        margin: 0 20px;
+    }
+
+    #media-partner {
+        /* font-size: 22px; */
+        padding-top: 2rem;
+        margin-bottom: 6px;
+    }
+
+    .container-fluid.pt-5 {
+        padding-top: 1.5rem !important;
+    }
+
+    .logos-slide {
+        animation-duration: 20s;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .logos {
+        padding: 20px 0;
+    }
+
+    .logos-slide img {
+        height: 25px;
+        margin: 0 15px;
+    }
+
+    #media-partner {
+        /* font-size: 20px; */
+        margin-bottom: 5px;
+    }
+
+    .container-fluid.pt-5 {
+        padding-top: 1rem !important;
+    }
+}
+
+/* Optimasi Performa */
+.logos::before,
+.logos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logos::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.logos::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.logos-slide {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Hover Effects yang Ditingkatkan */
+.logos-slide img {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.logos-slide img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    animation-play-state: paused;
+}
+
+/* Optimasi untuk Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .logos-slide {
+        animation: none;
+    }
+
+    .logos {
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .logos::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+}
 /* logo media-partner section end */
 
 /* maps section start */
@@ -228,11 +603,11 @@
 }
 
 .display-2 {
-    padding: 20px;
+    padding: 50px;
 }
 
 #map {
-    height: 50px; /* Set a specific height for the map */
+    height: 100px; /* Set a specific height for the map */
     width: 100%; /* Make the map responsive */
     border: 2px solid #555;
     border-radius: 8px;
@@ -254,31 +629,104 @@
     height: 100% !important;
 }
 
-@media (max-width: 768px) {
-    /* Adjust heading size */
+@media (min-width: 769px) and (max-width: 1024px) {
     #maps {
-        font-size: 2rem;
+        font-size: 30px;
     }
 
-    /* Stack map and legend vertically */
-    .d-flex {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Adjust map height on mobile */
     #map {
-        height: 300px;
+        height: 400px;
     }
 
-    /* Resize legend font and padding */
-    .legend {
-        font-size: 0.85rem;
+    .container-lokasi {
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #maps {
+        font-size: 25px;
+    }
+
+    #map {
+        height: 350px;
+    }
+
+    .container-lokasi {
+        padding-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #maps {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .display-2 {
+        padding: 15px;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .container-lokasi {
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 320px) {
+    #maps {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .display-2 {
+        padding: 10px;
+    }
+
+    #map {
+        height: 200px;
+    }
+
+    .container-lokasi {
+        padding-bottom: 5px;
+    }
+}
+
+/* Orientasi Landscape untuk Mobile */
+@media (max-height: 480px) and (orientation: landscape) {
+    #map {
+        height: 180px;
+    }
+
+    #maps {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .display-2 {
         padding: 10px;
     }
 }
 
-.container-lokasi {
-    padding-bottom: 10px;
+/* High-DPI Screens (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #map {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Print Media */
+@media print {
+    #maps {
+        font-size: 20pt;
+    }
+
+    #map {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
 }
 /* maps section end

@@ -101,7 +101,7 @@
     <!-- Media partner section end -->
 
     <!-- Maps start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid">
         <div class="container">
             <!-- Header -->
             <div class="text-center mb-5">

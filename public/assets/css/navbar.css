@@ -102,13 +102,15 @@ display: none;
 /* footer section start */
 footer {
     width: 100vw;
-    bottom: 0;
-    background: linear-gradient(to right, #C62E2E, #B8001F) ;
+    position: relative; /* Mengubah ke relative untuk konteks positioning */
+    background: linear-gradient(to right, #C62E2E, #B8001F);
     color: #fff;
-    padding: 20px 0 20px;
+    padding: 20px 0 110px; /* Menambah padding bottom untuk ruang copyright */
     font-size: 19px;
     line-height: 1.5;
-  }
+    display: flex;
+    flex-direction: column; /* Memastikan konten tersusun vertikal */
+}
 
   .row {
     width: 80%;
@@ -157,7 +159,7 @@ footer {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   .footer-section {
@@ -170,6 +172,39 @@ footer {
     width: 150px;
     margin-bottom: 20px;
   }
+
+  .footer-bottom {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: absolute; /* Memposisikan absolute terhadap footer */
+    bottom: 0; /* Menempel di bagian bawah footer */
+    left: 0;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding-bottom: 60px; /* Mengurangi padding pada mobile */
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding-bottom: 50px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+        padding: 8px 0;
+    }
+}
 
   .about p {
     margin-bottom: 20px;
@@ -203,7 +238,7 @@ footer {
 
   .socials a:hover {
     background: #fff;
-    color: #ef4444;
+    color: #6d6060e1;
   }
 
   .links ul {
@@ -334,11 +369,6 @@ footer {
     color: #000000;
     width: 100%;
     margin-top: auto;
-}
-
-/* Opsional: Menambahkan hover effect untuk meningkatkan interaktivitas */
-.footer-bottom:hover {
-    color: #495057;
 }
 
 /* Memastikan footer tetap di bawah pada layout modern */

@@ -54,7 +54,7 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <img src="{{ asset('img/logo.png') }}" class="footer-logo" alt="GarudaLink Logo">
-                <p>GarudaLink - Penyedia akses layanan internet, kencang tanpa lelet</p>
+                <p>GarudaLink - Penyedia akses layanan internet tanpa lelet</p>
                 <div class="contact">
                     <span><i class="fas fa-phone"></i> +62-853-6354-0354</span>
                     <span><i class="fas fa-envelope"></i> garudalinkpku@gmail.com</span>
@@ -66,22 +66,17 @@
                     <a href="https://www.instagram.com/tiaraanandapurwito/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="footer-section links">
-                <div class="footer-section contact-form">
-                    <h3>Contact Us</h3>
-                    <form action="#" class="bawah" method="post">
-                        <input type="email" name="email" class="text-input contact-input"
-                            placeholder="Your email address...">
-                        <textarea name="message" class="text-input contact-input" placeholder="Your message..." rows="1"></textarea>
-                        <button type="submit" class="btn btn-submit"
-                            style="font-weight: 500; background-color: black">Send</button>
-                    </form>
-                </div>
+            <form action="{{ route('messages.store') }}" method="post" class="contact-form">
+                @csrf
+                <input type="text" name="username" class="text-input contact-input" placeholder="Your username..." required>
+                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                <textarea name="message" class="text-input contact-input" placeholder="Your message..." rows="1"></textarea>
+                <button type="submit" class="btn btn-submit"
+                    style="font-weight: 500; background-color: black">Send</button>
+            </form>
+            <div class="footer-bottom">
+                Copyright &copy; 2024 GarudaLink. All right reserved.
             </div>
-        </div>
-        <div class="footer-bottom">
-            Copyright &copy; 2024 GarudaLink. All right reserved.
-        </div>
     </footer>
     <!-- Footer end -->
 

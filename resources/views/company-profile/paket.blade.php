@@ -16,7 +16,7 @@
                                 <h4 class="card-title">{{ $paket->nama_paket }}</h4>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-price">Rp {{ $paket->harga }} <span>/bulan</span></h5>
+                                <h5 class="card-price">Rp {{ number_format($paket->harga, 2, ',', '.') }} <span>/bulan</span></h5>
                                 <ol class="list-group list-group-flush mb-4">
                                     @foreach (explode('.', $paket->deskripsi) as $desc)
                                         <li class="list-group-item">{{ $desc }}</li>
