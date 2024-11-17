@@ -128,16 +128,141 @@
     width: 100%;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1200px) {
-    #paket-section .row {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+@media screen and (max-width: 1400px) {
+    #paket-section .container {
+        max-width: 1200px;
+    }
+
+    .card-price {
+        font-size: 1.6rem;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+    #paket-section .container {
+        max-width: 1000px;
+    }
+
+    #layanan {
+        font-size: 30px;
+    }
+
+    #jenis {
+        font-size: 18px;
+    }
+
+    .paket-card .card-header .card-title {
+        font-size: 1rem;
+    }
+
+    .card-price {
+        font-size: 1.5rem;
+    }
+
+    .paket-card .list-group-item {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #paket-section .container {
+        max-width: 900px;
+    }
+
+    .paket-card {
+        margin-bottom: 20px;
+    }
+
+    .card-price {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #paket-section .container {
+        padding: 0 15px;
+    }
+
+    #layanan {
+        font-size: 28px;
+    }
+
+    #jenis {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .paket-card {
+        margin-bottom: 15px;
+    }
+
+    .paket-card .card-body {
+        padding: 15px 10px;
+    }
+
+    .card-price {
+        font-size: 1.3rem;
+    }
+
+    .paket-card .btn {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
     #paket-section {
-        background-color: rgb(255, 255, 255);
+        padding: 40px 0;
+    }
+
+    #layanan {
+        font-size: 24px;
+    }
+
+    #jenis {
+        font-size: 15px;
+    }
+
+    .paket-card .card-header {
+        padding: 12px 8px;
+    }
+
+    .paket-card .card-body {
+        padding: 12px 8px;
+    }
+
+    .card-price {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .paket-card .list-group-item {
+        font-size: 0.75rem;
+        padding: 4px 0;
+    }
+
+    .paket-card .btn {
+        padding: 7px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Handle very small devices */
+@media screen and (max-width: 360px) {
+    #layanan {
+        font-size: 22px;
+    }
+
+    #jenis {
+        font-size: 14px;
+    }
+
+    .paket-card .card-header .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-price {
+        font-size: 1.1rem;
     }
 }
 /* paket end */

@@ -19,8 +19,82 @@
         .testimoni {
             background-color: white;
             padding: 60px;
-            padding-top: 150px;
+            padding-top: 100px;
         }
+        @media screen and (max-width: 1024px) {
+    .testimoni {
+      padding: 40px 20px;
+    }
+
+    .section-header .title {
+      font-size: 30px;
+    }
+  }
+
+        @media screen and (max-width: 768px) {
+    .testimoni {
+      padding: 30px 15px;
+      padding-top: 20px;
+    }
+
+    .section-header .title {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .testimoni-content {
+      margin: 10px;
+    }
+
+    .testimoni-items {
+      padding: 15px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .testimoni {
+      padding: 20px 10px;
+    }
+
+    .section-header .title {
+      font-size: 22px;
+    }
+
+    .testimoni-items {
+      margin: 5px;
+    }
+
+    .testimoni-items img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .text-box .name {
+      font-size: 16px;
+    }
+
+    .text-box .job {
+      font-size: 14px;
+    }
+
+    .testimoni-items p {
+      font-size: 15px !important;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .section-header .title {
+      font-size: 20px;
+    }
+
+    .testimoni-items {
+      padding: 10px;
+    }
+
+    .testimoni-items p {
+      font-size: 14px !important;
+    }
+  }
     </style>
 </head>
 
@@ -33,15 +107,14 @@
             </div>
             <div class="list-navbar">
                 <ul id="menu-list" class="navbar-1945">
-                    <a href="{{ url('/
-                                                            ') }}">
-                        <li>BERANDA</li>
+                    <a href="{{ url('/') }}">
+                        <li>Beranda</li>
                     </a>
                     <a href="{{ url('profil') }}">
-                        <li class="aktif">PROFIL</li>
+                        <li class="aktif">Profil</li>
                     </a>
                     <a href="{{ url('paket') }}">
-                        <li>PAKET</li>
+                        <li>Paket</li>
                     </a>
                 </ul>
             </div>

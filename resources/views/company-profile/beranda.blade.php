@@ -105,7 +105,7 @@
         <div class="container">
             <!-- Header -->
             <div class="text-center mb-5">
-                <h5 class="display-2" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
+                <h5 class="display-3" id="maps" data-aos="fade-right">Jaringan GarudaLink di Pekanbaru</h5>
             </div>
 
             <!-- Main Content -->
@@ -418,14 +418,14 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Dalam Radius!',
-                    text: `Rumah berada dalam radius 300 meter dari tiang ${poleName}.`,
+                    text: `Rumah berada dalam radius 300 meter dari ${poleName}.`,
                     confirmButtonText: 'OK'
                 });
             } else {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Diluar Radius!',
-                    text: `Rumah berada di luar radius 300 meter dari tiang ${poleName}.`,
+                    text: `Rumah berada di luar radius 300 meter dari ${poleName}.`,
                     confirmButtonText: 'OK'
                 });
             }

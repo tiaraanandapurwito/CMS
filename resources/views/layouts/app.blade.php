@@ -32,13 +32,13 @@
             <div class="list-navbar">
                 <ul id="menu-list" class="navbar-1945">
                     <a href="/">
-                        <li class="aktif">BERANDA</li>
+                        <li class="aktif">Beranda</li>
                     </a>
                     <a href="{{ url('profil') }}">
-                        <li>PROFIL</li>
+                        <li>Profil</li>
                     </a>
                     <a href="{{ url('paket') }}">
-                        <li>PAKET</li>
+                        <li>Paket</li>
                     </a>
                 </ul>
             </div>
